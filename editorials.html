@@ -381,7 +381,9 @@
         // Fonctionnalité Thème (persistante, icône stable)
         const THEME_KEY = 'ep_theme_mode';
         const themeToggle = document.getElementById('themeToggle');
-        let light = localStorage.getItem(THEME_KEY) === 'light';
+        const storedTheme = localStorage.getItem(THEME_KEY);
+        let light = storedTheme ? storedTheme === 'light' : false; // default dark
+        if (!storedTheme) localStorage.setItem(THEME_KEY, 'dark');
 
         function applyTheme(on){
             if(on){
@@ -393,7 +395,12 @@
                 document.documentElement.style.setProperty('--text','#071225');
                 document.documentElement.style.setProperty('--modal-bg','#ffffff');
                 document.documentElement.style.setProperty('--modal-text','#071225');
-                themeToggle?.setAttribute('aria-pressed','true');
+                if(themeToggle){
+                    themeToggle.style.backgroundColor = '#ffffff';
+                    themeToggle.style.color = '#071225';
+                    themeToggle.style.border = '1px solid #e5e7eb';
+                    themeToggle.setAttribute('aria-pressed','true');
+                }
             } else {
                 document.documentElement.style.setProperty('--bg','linear-gradient(180deg,#071028 0%, #071225 60%)');
                 document.documentElement.style.setProperty('--card','#0b1220');
@@ -403,7 +410,12 @@
                 document.documentElement.style.setProperty('--text','#e6eef8');
                 document.documentElement.style.setProperty('--modal-bg','#071227');
                 document.documentElement.style.setProperty('--modal-text','#cfe8ff');
-                themeToggle?.setAttribute('aria-pressed','false');
+                if(themeToggle){
+                    themeToggle.style.backgroundColor = '#0b1220';
+                    themeToggle.style.color = '#e6eef8';
+                    themeToggle.style.border = '1px solid rgba(255,255,255,0.2)';
+                    themeToggle.setAttribute('aria-pressed','false');
+                }
             }
         }
 
