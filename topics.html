@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>EuroPress — Browse by Topic</title>
+    <meta name="description" content="Explore articles by topic: Movies, TV, Music, Gaming, and more." />
+    <meta name="theme-color" content="#0f172a" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-REPLACE_WITH_YOUR_ID"></script>
+    <style>
+        :root{
+            --bg: linear-gradient(180deg,#071028 0%, #071225 60%);
+            --card:#0b1220;
+            --muted:#98a0b3;
+            --accent:#ff6b6b;
+            --glass: rgba(255,255,255,0.03);
+            --text: #e6eef8; 
+            --modal-bg: #071227; 
+            --modal-text: #cfe8ff; 
+            --btn-bg: transparent; 
+            --btn-border: rgba(255,255,255,0.06); 
+            --btn-text: var(--text); 
+            --btn-hover: rgba(255,255,255,0.03); 
+            --max-width:1100px; 
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            color-scheme: dark;
+        }
+        *{box-sizing:border-box}
+        html,body{height:100%; margin:0; background:var(--bg); color:var(--text); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale}
+        a{color:var(--accent); text-decoration:none}
+        header{backdrop-filter:saturate(1.1) blur(6px); background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); border-bottom:1px solid rgba(255,255,255,0.03)}
+        .container{max-width:var(--max-width); margin:0 auto; padding:20px}
+        .top{display:flex; gap:12px; align-items:center; justify-content:space-between}
+        .brand{display:flex; gap:12px; align-items:center}
+        .logo{
+            width:48px;height:48px;border-radius:8px;display:inline-grid;place-items:center;
+            background:linear-gradient(135deg,var(--accent), #7c3aed); box-shadow:0 6px 18px rgba(255,107,107,0.08); font-weight:700;
+        }
+        .title{font-size:1.15rem; font-weight:700; letter-spacing:0.2px}
+        nav{display:flex; gap:14px; align-items:center}
+        .search{display:flex; gap:8px; align-items:center; background:var(--glass); padding:6px; border-radius:10px}
+        .search input{background:transparent;border:0; outline:none;color:inherit; width:220px}
+        main{padding:28px 20px}
+
+        .topic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            max-width: 1200px;
+            margin: 28px auto; 
+        }
+
+        .topic-card {
+            background: var(--card);
+            border: 1px solid rgba(255,255,255,0.03);
+            border-radius: 12px;
+            padding: 28px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .topic-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            border-color: var(--accent);
+        }
+        .topic-icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+        .topic-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+        .topic-count {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        /* Styles pour afficher les articles filtrés */
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 28px;
+            max-width: 1200px;
+            margin: 28px auto;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid rgba(255,255,255,0.03);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+        .card-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+        }
+        .card-content {
+            padding: 16px;
+        }
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-top: 0;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+        .card-excerpt {
+            color: var(--muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--muted);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .kicker {
+            background: rgba(255,255,255,0.03);
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+        .read-btn {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 8px 12px;
+            background: var(--btn-bg);
+            border: 1px solid var(--btn-border);
+            border-radius: 8px;
+            color: var(--btn-text);
+            cursor: pointer;
+        }
+        .read-btn:hover {
+            background: var(--btn-hover);
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 8px 12px;
+            background: var(--btn-bg);
+            border: 1px solid var(--btn-border);
+            border-radius: 8px;
+            color: var(--btn-text);
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .back-btn:hover {
+            background: var(--btn-hover);
+        }
+
+        .tag{display:inline-block; padding:6px 9px; background:rgba(255,255,255,0.02); border-radius:999px; color:var(--muted); font-size:0.85rem; margin:4px}
+        .tag.active{ background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.06) }
+
+        footer{margin-top:28px;padding:18px 0;color:var(--muted); border-top:1px solid rgba(255,255,255,0.02)}
+        .muted{color:var(--muted)}
+
+        /* responsive */
+        @media (max-width:700px){
+            .topic-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 16px;
+            }
+            .topic-card {
+                padding: 20px;
+            }
+            .topic-icon {
+                font-size: 2rem;
+            }
+            .topic-title {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container top">
+            <div class="brand">
+                <div class="logo" aria-hidden="true">EP</div>
+                <div>
+                    <div class="title">EuroPress</div>
+                    <div class="muted" style="font-size:0.85rem">Culture & Entertainment</div>
+                </div>
+            </div>
+
+            <nav aria-label="Main navigation">
+                <a href="./index.html" class="tag" style="margin:0">Home</a>
+                <a href="./articles.html" class="tag" style="margin:0">Articles</a>
+                <a href="./topics.html" class="tag active" style="margin:0">Topics</a>
+                <a href="./trending.html" class="tag" style="margin:0">Trending</a>
+                <a href="./editorials.html" class="tag" style="margin:0">Editorials</a>
+                <a href="./privacy.html" class="tag" style="margin:0">Privacy</a>
+                <div class="search" role="search">
+                    <span aria-hidden="true">🎬</span>
+                    <input id="q" type="search" placeholder="Search reviews, interviews, shows..." aria-label="Search articles" />
+                    <button id="themeToggle" title="Toggle theme" aria-pressed="false">🌓</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container" style="padding:0">
+            <div id="topicsView">
+                <h1 style="margin-top:0">Browse by Topic</h1>
+                <p class="muted">Explore our coverage organized by category</p>
+                
+                <section class="topic-grid" id="topicsGrid">
+                    <!-- Topics will be rendered here by JavaScript -->
+                </section>
+            </div>
+
+            <div id="articleView" style="display:none;">
+                <button class="back-btn" onclick="goBackToTopics()">← Back to Topics</button>
+                <h1 style="margin-top:0" id="selectedTopicTitle"></h1>
+                
+                <section class="article-grid" id="filteredArticles">
+                    <div style="grid-column: 1 / -1; text-align: center; color: var(--muted); padding: 50px;">Loading articles...</div>
+                </section>
+            </div>
+        </div>
+
+        <footer class="container">
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap">
+                <div class="muted">© EuroPress 2025 — Culture & Entertainment</div>
+                <div style="display:flex; gap:12px;">
+                    <a href="./index.html">Home</a>
+                    <a href="./articles.html">Articles</a>
+                    <a href="./topics.html">Topics</a>
+                    <a href="./trending.html">Trending</a>
+                    <a href="./editorials.html">Editorials</a>
+                    <a href="./privacy.html">Privacy</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        // Fallback et remplacement proactif des placeholders distants
+        (() => {
+            const FALLBACK = './images/OIP.jpg';
+            const normalize = (img) => {
+                if (!img) return;
+                if (img.src && img.src.includes('via.placeholder.com')) {
+                    img.src = FALLBACK;
+                }
+                img.onerror = () => {
+                    img.onerror = null;
+                    img.src = FALLBACK;
+                };
+            };
+
+            const origSetAttribute = HTMLImageElement.prototype.setAttribute;
+            HTMLImageElement.prototype.setAttribute = function(name, value){
+                if (name === 'src' && typeof value === 'string' && value.includes('via.placeholder.com')) {
+                    value = FALLBACK;
+                }
+                return origSetAttribute.call(this, name, value);
+            };
+
+            document.addEventListener('DOMContentLoaded', () => {
+                document.querySelectorAll('img').forEach(normalize);
+            });
+        })();
+
+        // DONNÉES UNIFIÉES
+        const articlesData = [
+            { id: 1, title: "Rian Johnson's Star Wars Trilogy: A Broken Promise That Still Leaves a Bitter Taste", author: "Eliot GROSEIL", date: "Nov 24, 2025", topic: "Editorial", contentType: "editorial", img: "./images/GettyImages-2217355437.png", excerpt: "Johnson's planned Star Wars trilogy is effectively dead, leaving a bitter aftertaste after years of silence.", body: "<p>It is now official: Rian Johnson's Star Wars trilogy is effectively dead. The news is not exactly shocking after years of silence, but it still hits hard. For those who held onto the promise made in 2017, right after the explosive release of The Last Jedi, this feels like another letdown in a long line of abandoned Star Wars projects.</p><h3>A Missed Opportunity</h3><p>Johnson had everything lined up for success. With The Last Jedi, he dared to shake up the formula. Yes, he split the fanbase, but he also injected creativity into a saga that often played things too safe. A brand-new trilogy, completely removed from the Skywalker storyline, felt like a breath of fresh air waiting to happen: new worlds, new characters, new ideas, a chance to break free from the weight of legacy.</p><p>But reality had other plans. Between the initial announcement and today, Knives Out happened. Then its sequel. Then Netflix. Then a third Benoit Blanc mystery. Johnson himself admits he went into another universe. And honestly, who can blame him? Knives Out is fantastic. Still, the situation leaves a bitter aftertaste. Lucasfilm let a bold, imaginative filmmaker slip away—and for what?</p><h3>What Now?</h3><p>Meanwhile, the Star Wars machine keeps expanding, but the overall strategy is starting to look more like a patchwork than a coherent vision. Simon Kinberg is now taking over with a new trilogy (Episodes X, XI, and XII), while standalone films keep stacking up: The Mandalorian & Grogu (May 2026), Starfighter with Ryan Gosling (May 2027), and James Mangold's Dawn of the Jedi, which seems stuck in development limbo.</p><p>The issue? None of these projects appear to carry the kind of singular, daring perspective Johnson could have brought. Instead, it feels like a race to announce the next big name, the next shiny idea—handing out pieces of the galaxy to whichever director is trending, without any real sense of direction.</p><h3>Hope Remains (Somehow)</h3><p>So yes, it is disappointing. Disappointing that Lucasfilm could not keep Johnson onboard. Disappointing that the backlash to The Last Jedi may have played a role. Disappointing that once again, Star Wars seems to be choosing the safest path instead of the boldest one.</p><p>But hope is stubborn. And in this galaxy, it always finds a way to linger.</p>" },
+            { id: 2, title: "Stream Revival: Top Shows This Month", author: "A. Dupont", date: "Nov 20, 2025", topic: "TV", contentType: "article", img: "https://via.placeholder.com/600x338?text=Top+Shows", excerpt: "From prestige dramas to breakout comedies, here's what's worth your binge this month.", body: "<p>Streaming platforms keep pushing boundaries. This round-up highlights five shows that broke through the noise with smart writing and memorable characters.</p><p>Whether you're into psychological thrillers, workplace comedies, or epic fantasy, this month's lineup offers something compelling. These are the shows that sparked conversations, dominated social media, and reminded us why we fell in love with serialized storytelling in the first place.</p>" },
+            { id: 3, title: "Soundwaves: New Album Review", author: "L. Nguyen", date: "Nov 21, 2025", topic: ["Music"], contentType: "article", img: "https://via.placeholder.com/600x338?text=New+Album", excerpt: "A genre-blending sophomore album that refines the artist's sound while taking creative risks.", body: "<p>The album mixes electronic textures with live instrumentation, resulting in a warm, expansive record that rewards repeated listens. It's an ambitious follow-up that avoids the sophomore slump by leaning into experimentation without losing sight of melody and emotional resonance.</p>" },
+            { id: 4, title: "Level Up: Indie Game Spotlight", author: "R. Silva", date: "Nov 22, 2025", topic: "Gaming", contentType: "article", img: "https://via.placeholder.com/600x338?text=Indie+Game", excerpt: "An ambitious indie title blends nostalgic mechanics with modern design — our hands-on impressions.", body: "<p>This game marries classic platforming with thoughtful level design. Small studio polish shows in every encounter. It's a love letter to the genre that also pushes it forward with clever innovations and a distinctive art style.</p>" },
+            { id: 5, title: "L'erreur de Netflix : Abandonner les séries de niche pour le mainstream", author: "Célestine DUBOIS", date: "Nov 25, 2025", topic: "Editorial", contentType: "editorial", img: "https://via.placeholder.com/100x100?text=CD", excerpt: "L'obsession de la plateforme pour le succès global étouffe les productions qui faisaient sa richesse.", body: "<p>Netflix a bâti son empire sur la diversité. Des séries de niche audacieuses, des voix internationales, des expérimentations narratives qui n'auraient jamais vu le jour sur les networks traditionnels. Mais cette époque semble révolue.</p><p>Aujourd'hui, la plateforme poursuit le mainstream à tout prix. Les algorithmes dictent le contenu, les budgets astronomiques vont aux blockbusters formatés, et les séries qui ne génèrent pas immédiatement des millions de vues sont annulées sans pitié. Le résultat? Une uniformisation inquiétante. Netflix devient ce qu'il prétendait combattre: un diffuseur frileux, obsédé par les chiffres, incapable de prendre des risques.</p><p>Les créateurs audacieux vont ailleurs. Les abonnés s'ennuient. Et Netflix, dans sa quête du succès global, perd ce qui faisait sa singularité. C'est une erreur stratégique majeure dont les conséquences se font déjà sentir.</p>" },
+            { id: 6, title: "Dune Part Two: A Spectacle That Defines the Modern Sci-Fi Blockbuster", author: "L. Nguyen", date: "Feb 15, 2025", topic: "Movies", contentType: "article", img: "https://via.placeholder.com/600x338?text=Dune+Review", excerpt: "Denis Villeneuve delivers an epic of scale and ambition, though it struggles with pace.", body: "<p>The scale of Arrakis is breathtaking. This is cinema meant for the largest screen possible. Villeneuve's vision is uncompromising, and while the film occasionally drags under the weight of its own ambition, the visual storytelling and world-building are second to none. It's a landmark achievement in science fiction filmmaking.</p>" },
+            { id: 7, title: "L'IA va-t-elle tuer la critique culturelle ?", author: "Marc FONTAINE", date: "Nov 26, 2025", topic: "Editorial", contentType: "editorial", img: "https://via.placeholder.com/100x100?text=MF", excerpt: "Les outils d'écriture automatisés menacent-ils le journalisme culturel spécialisé?", body: "<p>L'intelligence artificielle progresse à une vitesse vertigineuse. Des algorithmes peuvent désormais générer des critiques de films, de jeux vidéo, d'albums—parfois avec une cohérence troublante. Mais peuvent-ils remplacer la sensibilité humaine, le contexte culturel, la voix singulière d'un critique?</p><p>La réponse est nuancée. L'IA peut synthétiser des informations, identifier des tendances, même imiter un style. Mais elle ne peut pas ressentir. Elle ne peut pas comprendre pourquoi une scène résonne avec notre vécu, pourquoi une mélodie nous transporte, pourquoi un dialogue nous bouleverse. La critique culturelle n'est pas seulement une analyse—c'est un acte d'interprétation profondément humain.</p><p>Le danger n'est pas que l'IA remplace les critiques, mais qu'elle dévalue leur travail en inondant le marché de contenus génériques. Si nous voulons préserver la critique comme art, nous devons défendre sa valeur, exiger la transparence, et continuer à chercher des voix authentiques dans le bruit algorithmique.</p>" },
+            { id: 8, title: "Red Dead Redemption 2: Commercial Success and Development Conditions", author: "Louis Paicheur", date: "Dec 24, 2025", topic: "Gaming", contentType: "article", img: "https://via.placeholder.com/600x338?text=Red+Dead+Redemption+2", excerpt: "Released in October 2018, Red Dead Redemption 2 achieved worldwide success. But what were the conditions behind its eight-year development?", body: "<p>Released in October 2018, Red Dead Redemption 2, developed by Rockstar Games, achieved worldwide commercial success. The title is the result of a development cycle that lasted around eight years. This development required significant human and financial resources. It also revived questions about the studio's internal work organization.</p><h3>A Western Set in the Late 19th Century</h3><p>The game takes place in the late 19th century, in a declining American Far West. The player controls Arthur Morgan, an outlaw and member of a criminal gang. The authorities pursue the group after several robberies, and the story follows their escape through a changing America.</p><h3>A Large-Scale Development</h3><p>The development spanned roughly eight years. Its cost, according to several specialized media outlets, is estimated between 370 and 540 million dollars. The production reportedly involved several thousand people, with extensive work on performance and dialogue: around 1,200 actors are said to have recorded nearly 500,000 lines.</p><h3>Work Rhythms Reported by Developers</h3><p>Developers described intense work rhythms during certain phases. Some employees say they worked up to 60 hours per week. Others mention even more demanding periods. A former animator at the studio stated that he exceeded 70 hours per week for several months.</p><h3>Rockstar's Position and Internal Data Reported in the Press</h3><p>Rockstar Games claims an average workweek of 45 hours. Internal surveys, cited by the press, indicate that around 20% of employees reported exceeding this threshold during the final stages. The actors also worked over several years, under confidentiality agreements. Roger Clark, who portrays Arthur Morgan, mentioned the length of the recording sessions and the secrecy surrounding the development.</p><h3>A Record Launch and Sustained Sales</h3><p>At release, the game generated 725 million dollars in revenue during its first weekend. Today, more than 79 million copies have been sold worldwide.</p>" },
+            { id: 9, title: "Netflix in Exclusive Negotiations to Acquire Warner Bros Discovery", author: "Eliot GROSEIL", date: "Dec 24, 2025", topic: ["TV","Celebrity"], contentType: "article", img: "https://via.placeholder.com/600x338?text=Netflix+Warner+Bros", excerpt: "A colossal deal that would reshape the global entertainment landscape. Netflix reportedly offers $28 per share for Warner Bros Discovery.", body: "<p>Netflix has reached a decisive milestone in its consolidation strategy. The streaming giant has entered into exclusive negotiations to acquire Warner Bros Discovery, according to reports released Friday by American media outlets. This transaction, valued at $28 per share, would represent one of the most significant merger and acquisition operations in the entertainment industry since Disney's acquisition of Fox in 2019.</p><h3>A Record Offer on the Table</h3><p>Netflix has reportedly submitted the highest bid to take over Warner Bros Discovery. According to the Wall Street Journal, both groups are preparing to officially announce this information imminently. Warner Bros Discovery's market capitalization currently stands at around $60 billion according to Bloomberg, which first revealed the deal. However, WBD's board of directors is reportedly seeking a figure closer to $75 billion, excluding debt.</p><p>Other contenders were also in the race, notably Paramount Skydance and telecommunications operator Comcast, but Netflix's offer appears to be the winning bid.</p><h3>A Streaming Empire Under Construction</h3><p>This acquisition would allow Netflix to get its hands on an exceptional catalog. Warner Bros Discovery indeed possesses an impressive library of cult classic films and renowned television productions. The deal would also include HBO Max, the prestigious streaming service that ranks among the most respected platforms in the sector.</p><p>By merging these two entities, Netflix would significantly consolidate its position in the streaming market, a sector undergoing major restructuring. The fierce battle between platforms and the gradual decline of traditional television are pushing major American players to undertake significant strategic reorganizations. To compete with giants like Netflix and Disney, competitors are seeking to unite in order to strengthen their streaming offerings and improve their profitability.</p><h3>Political and Artistic Concerns</h3><p>This deal is not receiving unanimous support. According to the New York Post, White House officials recently expressed their concerns regarding this possible acquisition. They fear it would give Netflix an excessive dominant position in the American content market, raising competition issues.</p><p>Jeremy Goldman, an analyst at research firm Emarketer, emphasizes the strategic importance of this transaction: the winner will shape how Hollywood's biggest films are distributed and how advertisers adapt to it.</p><p>On the creative side, reservations are also evident. Director James Cameron, famous for blockbusters like Avatar and Titanic, declared his opposition to this acquisition during an interview on The Town podcast released last Friday. He criticizes Netflix executives for prioritizing their platform over movie theaters, thereby threatening the traditional cinematic experience.</p><p>If negotiations are successful, this merger would mark a historic turning point in the entertainment industry and redefine the rules of the streaming game for years to come.</p>" }
+        ];
+
+        // Définition des topics avec leurs icônes
+        const topics = [
+            { name: 'Movies', icon: '🎬', color: '#ff6b6b' },
+            { name: 'TV', icon: '📺', color: '#4ecdc4' },
+            { name: 'Music', icon: '🎵', color: '#95e1d3' },
+            { name: 'Gaming', icon: '🎮', color: '#a29bfe' },
+            { name: 'Editorial', icon: '✍️', color: '#7c3aed' },
+            { name: 'Celebrity', icon: '⭐', color: '#ffeaa7' }
+        ];
+
+        // Fonction pour compter les articles par topic
+        function countArticlesByTopic(topicName) {
+            return articlesData.filter(article => {
+                if (Array.isArray(article.topic)) {
+                    return article.topic.includes(topicName);
+                }
+                return article.topic === topicName;
+            }).length;
+        }
+
+        // Fonction pour naviguer vers la page d'articles filtrés
+        function goToTopic(topicName) {
+            showArticlesByTopic(topicName);
+        }
+
+        // Fonction pour afficher les articles filtrés par topic
+        function showArticlesByTopic(topicName) {
+            document.getElementById('topicsView').style.display = 'none';
+            document.getElementById('articleView').style.display = 'block';
+            document.getElementById('selectedTopicTitle').textContent = topicName + ' Articles';
+
+            const filtered = articlesData.filter(article => {
+                if (Array.isArray(article.topic)) {
+                    return article.topic.includes(topicName);
+                }
+                return article.topic === topicName;
+            });
+
+            const grid = document.getElementById('filteredArticles');
+            if (!grid) return;
+
+            grid.innerHTML = '';
+
+            if (filtered.length === 0) {
+                grid.innerHTML = '<div style="grid-column: 1 / -1; text-align: center; color: var(--muted); padding: 50px;">No articles found for this topic.</div>';
+                return;
+            }
+
+            filtered.forEach(article => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.onclick = () => openArticle(article.id);
+                card.style.cursor = 'pointer';
+
+                card.innerHTML = `
+                    <img src="${article.img}" alt="${article.title}" class="card-image" onerror="this.src='https://via.placeholder.com/600x338?text=${encodeURIComponent(article.title)}';">
+                    <div class="card-content">
+                        <div class="kicker">${article.topic}</div>
+                        <h3 class="card-title">${article.title}</h3>
+                        <p class="card-excerpt">${article.excerpt}</p>
+                        <div class="card-meta">
+                            <span>${article.author} — ${article.date}</span>
+                            <span class="read-btn">Read</span>
+                        </div>
+                    </div>
+                `;
+
+                grid.appendChild(card);
+            });
+        }
+
+        // Fonction pour revenir à la vue des topics
+        function goBackToTopics() {
+            document.getElementById('topicsView').style.display = 'block';
+            document.getElementById('articleView').style.display = 'none';
+        }
+
+        // Persistent click counts for trending
+        const CLICK_KEY = 'ep_click_counts';
+        let clickCounts = JSON.parse(localStorage.getItem(CLICK_KEY) || '{}');
+        function saveCounts() { localStorage.setItem(CLICK_KEY, JSON.stringify(clickCounts)); }
+        function incrementCount(id) { clickCounts[id] = (clickCounts[id] || 0) + 1; saveCounts(); }
+
+        // Fonction pour ouvrir un article en plein écran sur articles.html
+        function openArticle(articleId) {
+            incrementCount(articleId);
+            window.location.href = `./articles.html?articleId=${articleId}`;
+        }
+
+        // Rendu de la grille de topics
+        function renderTopics() {
+            const grid = document.getElementById('topicsGrid');
+            if (!grid) return;
+
+            grid.innerHTML = '';
+
+            topics.forEach(topic => {
+                const count = countArticlesByTopic(topic.name);
+                
+                const card = document.createElement('div');
+                card.className = 'topic-card';
+                card.onclick = () => goToTopic(topic.name);
+                
+                card.innerHTML = `
+                    <div class="topic-icon">${topic.icon}</div>
+                    <div class="topic-title">${topic.name}</div>
+                    <div class="topic-count">${count} article${count !== 1 ? 's' : ''}</div>
+                `;
+                
+                grid.appendChild(card);
+            });
+        }
+
+        // Fonctionnalité Thème (persistante, icône stable)
+        const THEME_KEY = 'ep_theme_mode';
+        const themeToggle = document.getElementById('themeToggle');
+        let light = localStorage.getItem(THEME_KEY) === 'light';
+
+        function applyTheme(on){
+            if(on){
+                document.documentElement.style.setProperty('--bg','linear-gradient(180deg,#f6fbff 0%, #eef6ff 60%)');
+                document.documentElement.style.setProperty('--card','#ffffff');
+                document.documentElement.style.setProperty('--muted','#556677');
+                document.documentElement.style.setProperty('--accent','#ff6b6b');
+                document.documentElement.style.setProperty('--glass','rgba(0,0,0,0.03)');
+                document.documentElement.style.setProperty('--text','#071225');
+                document.documentElement.style.setProperty('--modal-bg','#ffffff');
+                document.documentElement.style.setProperty('--modal-text','#071225');
+                document.documentElement.style.setProperty('--btn-bg','transparent');
+                document.documentElement.style.setProperty('--btn-border','rgba(7,18,37,0.06)');
+                document.documentElement.style.setProperty('--btn-text','#071225');
+                document.documentElement.style.setProperty('--btn-hover','rgba(7,18,37,0.04)');
+                if(themeToggle){
+                    themeToggle.style.backgroundColor = '#ffffff';
+                    themeToggle.style.color = '#000000';
+                }
+                themeToggle?.setAttribute('aria-pressed','true');
+            } else {
+                document.documentElement.style.removeProperty('--bg');
+                document.documentElement.style.removeProperty('--card');
+                document.documentElement.style.removeProperty('--muted');
+                document.documentElement.style.removeProperty('--accent');
+                document.documentElement.style.removeProperty('--glass');
+                document.documentElement.style.removeProperty('--text');
+                document.documentElement.style.removeProperty('--modal-bg');
+                document.documentElement.style.removeProperty('--modal-text');
+                document.documentElement.style.removeProperty('--btn-bg');
+                document.documentElement.style.removeProperty('--btn-border');
+                document.documentElement.style.removeProperty('--btn-text');
+                document.documentElement.style.removeProperty('--btn-hover');
+                if(themeToggle){
+                    themeToggle.style.backgroundColor = '#000000';
+                    themeToggle.style.color = '#ffffff';
+                }
+                themeToggle?.setAttribute('aria-pressed','false');
+            }
+        }
+
+        applyTheme(light);
+
+        themeToggle.addEventListener('click', ()=>{
+            light = !light;
+            localStorage.setItem(THEME_KEY, light ? 'light' : 'dark');
+            applyTheme(light);
+        });
+
+        // Exécution initiale
+        document.addEventListener('DOMContentLoaded', renderTopics);
+    </script>
+</body>
+</html>

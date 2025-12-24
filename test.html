@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Articles Display</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        .test-result { margin: 10px 0; padding: 10px; border: 1px solid #ccc; }
+        .pass { background: #efe; }
+        .fail { background: #fee; }
+    </style>
+</head>
+<body>
+    <h1>Testing articles.html functionality</h1>
+    <div id="results"></div>
+
+    <script>
+        const results = document.getElementById('results');
+        
+        function test(name, fn) {
+            try {
+                fn();
+                results.innerHTML += `<div class="test-result pass">✓ ${name}</div>`;
+            } catch (e) {
+                results.innerHTML += `<div class="test-result fail">✗ ${name}: ${e.message}</div>`;
+            }
+        }
+
+        // Test 1: Check if articles.html file exists and is readable
+        test('articles.html can be loaded', () => {
+            // This will be verified by the page load itself
+            if (typeof articlesData === 'undefined') throw new Error('articlesData not found');
+        });
+
+        test('articlesData has articles', () => {
+            if (!Array.isArray(articlesData) || articlesData.length === 0) {
+                throw new Error('articlesData is not an array or is empty');
+            }
+        });
+
+        test('displayArticle function exists', () => {
+            if (typeof displayArticle !== 'function') {
+                throw new Error('displayArticle is not a function');
+            }
+        });
+
+        test('goBackToList function exists', () => {
+            if (typeof goBackToList !== 'function') {
+                throw new Error('goBackToList is not a function');
+            }
+        });
+
+        test('checkURLForArticle function exists', () => {
+            if (typeof checkURLForArticle !== 'function') {
+                throw new Error('checkURLForArticle is not a function');
+            }
+        });
+
+        results.innerHTML += `<hr><p><strong>articlesData items: ${articlesData.length}</strong></p>`;
+        results.innerHTML += `<p>First article: ${articlesData[0]?.title || 'N/A'}</p>`;
+    </script>
+</body>
+</html>

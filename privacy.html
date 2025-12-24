@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>EuroPress — Privacy Policy</title>
+    <meta name="description" content="EuroPress — reviews, interviews, features and pop-culture coverage." />
+    <meta name="theme-color" content="#0f172a" />
+    <style>
+        :root{
+            --bg: linear-gradient(180deg,#071028 0%, #071225 60%);
+            --card:#0b1220;
+            --muted:#98a0b3;
+            --accent:#ff6b6b;
+            --glass: rgba(255,255,255,0.03);
+            --text: #e6eef8;
+            --modal-bg: #071227;
+            --modal-text: #cfe8ff;
+            --btn-bg: transparent;
+            --btn-border: rgba(255,255,255,0.06);
+            --btn-text: var(--text);
+            --btn-hover: rgba(255,255,255,0.03);
+            --max-width:1100px;
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            color-scheme: dark;
+        }
+        *{box-sizing:border-box}
+        html,body{height:100%; margin:0; background:var(--bg); color:var(--text); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale}
+        a{color:var(--accent); text-decoration:none}
+        header{backdrop-filter:saturate(1.1) blur(6px); background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); border-bottom:1px solid rgba(255,255,255,0.03)}
+        .container{max-width:var(--max-width); margin:0 auto; padding:20px}
+        .top{display:flex; gap:12px; align-items:center; justify-content:space-between}
+        .brand{display:flex; gap:12px; align-items:center}
+        .logo{width:48px;height:48px;border-radius:8px;display:inline-grid;place-items:center;
+            background:linear-gradient(135deg,var(--accent), #7c3aed); font-weight:700;}
+        .title{font-size:1.15rem; font-weight:700;}
+        nav{display:flex; gap:14px; align-items:center}
+        .search{display:flex; gap:8px; align-items:center; background:var(--glass); padding:6px; border-radius:10px}
+        .search input{background:transparent;border:0; outline:none;color:inherit; width:220px}
+        main{padding:28px 20px}
+        .layout{display:grid; grid-template-columns: 1fr 320px; gap:28px; max-width:var(--max-width); margin:0 auto}
+        .hero{background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:12px; padding:18px; display:grid; grid-template-columns: 1fr 320px; gap:18px; align-items:start;}
+        .hero img{width:100%; height:220px; object-fit:cover; border-radius:10px}
+        .kicker{background:rgba(255,255,255,0.03); padding:6px 10px; border-radius:999px; font-size:0.8rem; color:var(--accent); font-weight:600}
+        .article-title{font-size:1.35rem; margin:8px 0 12px; font-weight:700}
+        .excerpt{color:var(--muted); line-height:1.5}
+        /* Adjusted .card for cleaner content page text */
+        .card{background:var(--card); padding:18px; border-radius:10px; margin-bottom:20px; border:1px solid rgba(255,255,255,0.02); line-height:1.6;}
+        .card h2{margin-top:0; font-size:1.4rem;}
+        .card h3{margin-top:0; font-size:1.2rem;}
+        .card ul, .card p{margin-bottom:1em; line-height:1.6;}
+        .tag{display:inline-block; padding:6px 9px; background:rgba(255,255,255,0.02); border-radius:999px; color:var(--muted); font-size:0.85rem; margin:4px 4px 4px 0;}
+        .tag.active{ background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.06) }
+
+        footer{margin-top:28px;padding:18px 0;color:var(--muted); border-top:1px solid rgba(255,255,255,0.02)}
+        .muted{color:var(--muted)}
+        @media (max-width:1000px){
+            .layout{grid-template-columns:1fr; padding:0 14px}
+            .hero{grid-template-columns: 1fr;}
+            .hero img{height:200px}
+            .search input{width:120px}
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container top">
+            <div class="brand">
+                <div class="logo" aria-hidden="true">EP</div>
+                <div>
+                    <div class="title">EuroPress</div>
+                    <div class="muted" style="font-size:0.85rem">Culture & Entertainment</div>
+                </div>
+            </div>
+
+            <nav aria-label="Main navigation">
+                <a href="./index.html" class="tag" style="margin:0">Home</a>
+                <a href="./articles.html" class="tag" style="margin:0">Articles</a>
+                <a href="./topics.html" class="tag" style="margin:0">Topics</a>
+                <a href="./trending.html" class="tag" style="margin:0">Trending</a>
+                <a href="./editorials.html" class="tag" style="margin:0">Editorials</a>
+                <a href="./privacy.html" class="tag active" style="margin:0">Privacy</a>
+                <div class="search" role="search">
+                    <span aria-hidden="true">🎬</span>
+                    <input id="q" type="search" placeholder="Search reviews, interviews, shows..." aria-label="Search articles" />
+                    <button id="themeToggle" title="Toggle theme" aria-pressed="false">🌓</button>
+                </div>
+            </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="container" style="padding:0">
+            <div class="kicker">Privacy</div>
+            <h1 class="article-title">EuroPress Privacy Policy</h1>
+            <p class="excerpt">Learn how we protect your data and respect your rights. Last updated: December 8, 2025.</p>
+        </div>
+        <img src="./images/OIP.jpg" alt="Privacy illustration" />
+    </div>
+
+    <main>
+        <div style="max-width:var(--max-width); margin:0 auto">
+            <div>
+                <div class="card">
+                    <h2>Introduction</h2>
+                    <p>At <strong>EuroPress</strong>, we are committed to protecting your privacy. This Privacy Policy outlines how we collect, use, and safeguard your information when you visit our website, <strong>EuroPress.com</strong>.</p>
+                </div>
+
+                <div class="card">
+                    <h2>Information We Collect</h2>
+                    <p>We collect two main types of information:</p>
+                    <ul>
+                        <li><strong>Personal Information (Direct):</strong> Data you voluntarily provide, such as your email address when you sign up for our newsletter. We do <strong>not</strong> collect your name or other contact details unless explicitly provided for a specific service (like a contact form).</li>
+                        <li><strong>Usage Data (Indirect):</strong> Information automatically collected as you interact with the site, including your IP address, browser type, pages visited, time spent, and referring links. This is typically collected via cookies and analytics services.</li>
+                        <li><strong>Cookies:</strong> Small data files stored on your device to improve site functionality, remember preferences, and analyze traffic. You can choose to disable cookies in your browser settings.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2>How We Use Your Information</h2>
+                    <p>We use the collected information for the following purposes:</p>
+                    <ul>
+                        <li><strong>To operate and maintain</strong> the website, ensuring all features function correctly.</li>
+                        <li><strong>To improve</strong> site content and user experience by analyzing traffic and usage patterns.</li>
+                        <li><strong>To send</strong> the <strong>EuroPress</strong> newsletter, if you have specifically subscribed.</li>
+                        <li><strong>To detect and prevent</strong> technical issues or security breaches.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2>Data Sharing and Disclosure</h2>
+                    <p>We do not sell, trade, or rent your Personal Information to third parties. We may share Usage Data with trusted third-party services, such as Google Analytics or advertising partners, to analyze traffic and serve relevant ads. These third parties are bound by their own privacy policies.</p>
+                </div>
+
+                <div class="card">
+                    <h2>Your Rights and Choices</h2>
+                    <p>You have the right to:</p>
+                    <ul>
+                        <li><strong>Opt-out</strong> of receiving promotional emails by using the unsubscribe link in the newsletter.</li>
+                        <li><strong>Disable cookies</strong> in your browser settings to prevent the collection of Usage Data.</li>
+                        <li><strong>Request access</strong> to any personal data we hold about you.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2>Contact Us</h2>
+                    <p>If you have any questions about this Privacy Policy or your data, please contact us at:</p>
+                    <p class="muted" style="margin-bottom:0;">Email: <a href="mailto:privacyentertainmentpress@proton.me">privacyentertainmentpress@proton.me</a></p>
+                    <p class="muted" style="margin-top:0;">*Please allow up to 5 business days for a response.*</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="container">
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap">
+            <div class="muted">© EuroPress 2025 — Culture & Entertainment</div>
+            <div style="display:flex; gap:12px;">
+                <a href="./index.html">Home</a>
+                <a href="./articles.html">Articles</a>
+                <a href="./topics.html">Topics</a>
+                <a href="./trending.html">Trending</a>
+                <a href="./editorials.html">Editorials</a>
+                <a href="./privacy.html">Privacy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Fallback et remplacement proactif des placeholders distants
+        (() => {
+            const FALLBACK = './images/OIP.jpg';
+            const normalize = (img) => {
+                if (!img) return;
+                if (img.src && img.src.includes('via.placeholder.com')) {
+                    img.src = FALLBACK;
+                }
+                img.onerror = () => {
+                    img.onerror = null;
+                    img.src = FALLBACK;
+                };
+            };
+
+            const origSetAttribute = HTMLImageElement.prototype.setAttribute;
+            HTMLImageElement.prototype.setAttribute = function(name, value){
+                if (name === 'src' && typeof value === 'string' && value.includes('via.placeholder.com')) {
+                    value = FALLBACK;
+                }
+                return origSetAttribute.call(this, name, value);
+            };
+
+            document.addEventListener('DOMContentLoaded', () => {
+                document.querySelectorAll('img').forEach(normalize);
+            });
+        })();
+
+        // DONNÉES UNIFIÉES
+        const articlesData = [
+            {
+                id: 1,
+                title: "Rian Johnson's Star Wars Trilogy: A Broken Promise That Leaves a Bitter Taste",
+                author: "Eliot GROSEIL",
+                date: "Nov 24, 2025",
+                topic: ["Movies","Celebrity"],
+                img: "https://via.placeholder.com/600x338?text=Indie+Film",
+                excerpt: "Rian Johnson's Star Wars trilogy is dead. Boldness lost, safe spin-offs remain.\nStar Wars goes on… without Johnson's spark.",
+                body: "<p>The full article body...</p>"
+            },
+            {
+                id: 2,
+                title: "Stream Revival: Top Shows This Month",
+                author: "A. Dupont",
+                date: "Nov 20, 2025",
+                topic: "TV",
+                img: "https://via.placeholder.com/600x338?text=Top+Shows",
+                excerpt: "From prestige dramas to breakout comedies, here's what's worth your binge this month.",
+                body: "<p>The full article body...</p>"
+            },
+            {
+                id: 3,
+                title: "Soundwaves: New Album Review",
+                author: "L. Nguyen",
+                date: "Nov 21, 2025",
+                topic: ["Music"],
+                img: "https://via.placeholder.com/600x338?text=New+Album",
+                excerpt: "A genre-blending sophomore album that refines the artist's sound while taking creative risks.",
+                body: "<p>The full article body...</p>"
+            },
+            {
+                id: 4,
+                title: "Level Up: Indie Game Spotlight",
+                author: "R. Silva",
+                date: "Nov 22, 2025",
+                topic: "Gaming",
+                img: "https://via.placeholder.com/600x338?text=Indie+Game",
+                excerpt: "An ambitious indie title blends nostalgic mechanics with modern design — our hands-on impressions.",
+                body: "<p>The full article body...</p>"
+            },
+            {
+                id: 8,
+                title: "Red Dead Redemption 2: Commercial Success and Development Conditions",
+                author: "Louis Paicheur",
+                date: "Dec 24, 2025",
+                topic: "Gaming",
+                contentType: "article",
+                img: "https://via.placeholder.com/600x338?text=Red+Dead+Redemption+2",
+                excerpt: "Released in October 2018, Red Dead Redemption 2 achieved worldwide success. But what were the conditions behind its eight-year development?",
+                body: "<p>The full article body...</p>"
+            },
+            {
+                id: 9,
+                title: "Netflix in Exclusive Negotiations to Acquire Warner Bros Discovery",
+                author: "Eliot GROSEIL",
+                date: "Dec 24, 2025",
+                topic: ["TV","Celebrity"],
+                contentType: "article",
+                img: "https://via.placeholder.com/600x338?text=Netflix+Warner+Bros",
+                excerpt: "A colossal deal that would reshape the global entertainment landscape. Netflix reportedly offers $28 per share for Warner Bros Discovery.",
+                body: "<p>The full article body...</p>"
+            }
+        ];
+
+        // Simple theme toggle implementation (persistant, icône inchangée)
+        const THEME_KEY = 'ep_theme_mode';
+        const themeToggle = document.getElementById('themeToggle');
+        let light = localStorage.getItem(THEME_KEY) === 'light';
+
+        function applyLightTheme(on){
+            if(on){
+                document.documentElement.style.setProperty('--bg','linear-gradient(180deg,#f6fbff 0%, #eef6ff 60%)');
+                document.documentElement.style.setProperty('--card','#ffffff');
+                document.documentElement.style.setProperty('--muted','#556677');
+                document.documentElement.style.setProperty('--accent','#ff6b6b');
+                document.documentElement.style.setProperty('--glass','rgba(0,0,0,0.03)');
+                document.documentElement.style.setProperty('--text','#071225');
+                document.documentElement.style.setProperty('--modal-bg','#ffffff');
+                document.documentElement.style.setProperty('--modal-text','#071225');
+                document.documentElement.style.setProperty('--btn-bg','transparent');
+                document.documentElement.style.setProperty('--btn-border','rgba(7,18,37,0.06)');
+                document.documentElement.style.setProperty('--btn-text','#071225');
+                document.documentElement.style.setProperty('--btn-hover','rgba(7,18,37,0.04)');
+                if(themeToggle){
+                    themeToggle.style.backgroundColor = '#ffffff';
+                    themeToggle.style.color = '#000000';
+                    themeToggle.setAttribute('aria-pressed','true');
+                }
+            } else {
+                document.documentElement.style.removeProperty('--bg');
+                document.documentElement.style.removeProperty('--card');
+                document.documentElement.style.removeProperty('--muted');
+                document.documentElement.style.removeProperty('--accent');
+                document.documentElement.style.removeProperty('--glass');
+                document.documentElement.style.removeProperty('--text');
+                document.documentElement.style.removeProperty('--modal-bg');
+                document.documentElement.style.removeProperty('--modal-text');
+                document.documentElement.style.removeProperty('--btn-bg');
+                document.documentElement.style.removeProperty('--btn-border');
+                document.documentElement.style.removeProperty('--btn-text');
+                document.documentElement.style.removeProperty('--btn-hover');
+                if(themeToggle){
+                    themeToggle.style.backgroundColor = '#000000';
+                    themeToggle.style.color = '#ffffff';
+                    themeToggle.setAttribute('aria-pressed','false');
+                }
+            }
+        }
+
+        applyLightTheme(light);
+
+        if(themeToggle){
+            themeToggle.addEventListener('click', () => {
+                light = !light;
+                localStorage.setItem(THEME_KEY, light ? 'light' : 'dark');
+                applyLightTheme(light);
+            });
+        }
+    </script>
+</body>
+</html>
