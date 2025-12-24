@@ -393,10 +393,6 @@
                 document.documentElement.style.setProperty('--text','#071225');
                 document.documentElement.style.setProperty('--modal-bg','#ffffff');
                 document.documentElement.style.setProperty('--modal-text','#071225');
-                if(themeToggle){
-                    themeToggle.style.backgroundColor = '#ffffff';
-                    themeToggle.style.color = '#000000';
-                }
                 themeToggle?.setAttribute('aria-pressed','true');
             } else {
                 document.documentElement.style.setProperty('--bg','linear-gradient(180deg,#071028 0%, #071225 60%)');
@@ -407,10 +403,6 @@
                 document.documentElement.style.setProperty('--text','#e6eef8');
                 document.documentElement.style.setProperty('--modal-bg','#071227');
                 document.documentElement.style.setProperty('--modal-text','#cfe8ff');
-                if(themeToggle){
-                    themeToggle.style.backgroundColor = '#000000';
-                    themeToggle.style.color = '#ffffff';
-                }
                 themeToggle?.setAttribute('aria-pressed','false');
             }
         }

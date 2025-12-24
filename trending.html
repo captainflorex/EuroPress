@@ -458,10 +458,6 @@
                 document.documentElement.style.setProperty('--btn-border','rgba(7,18,37,0.06)');
                 document.documentElement.style.setProperty('--btn-text','#071225');
                 document.documentElement.style.setProperty('--btn-hover','rgba(7,18,37,0.04)');
-                if(themeToggle){
-                    themeToggle.style.backgroundColor = '#ffffff';
-                    themeToggle.style.color = '#000000';
-                }
                 themeToggle?.setAttribute('aria-pressed','true');
             } else {
                 document.documentElement.style.removeProperty('--bg');
@@ -476,10 +472,6 @@
                 document.documentElement.style.removeProperty('--btn-border');
                 document.documentElement.style.removeProperty('--btn-text');
                 document.documentElement.style.removeProperty('--btn-hover');
-                if(themeToggle){
-                    themeToggle.style.backgroundColor = '#000000';
-                    themeToggle.style.color = '#ffffff';
-                }
                 themeToggle?.setAttribute('aria-pressed','false');
             }
         }
