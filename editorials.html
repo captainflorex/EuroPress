@@ -157,13 +157,13 @@
 <body>
     <header>
         <div class="container top">
-            <div class="brand">
+            <a href="./index.html" class="brand" style="text-decoration:none; color:inherit;">
                 <div class="logo" aria-hidden="true">EP</div>
                 <div>
                     <div class="title">EuroPress</div>
                     <div class="muted" style="font-size:0.85rem">Culture & Entertainment</div>
                 </div>
-            </div>
+            </a>
 
             <nav aria-label="Main navigation">
                 <a href="./index.html" class="tag" style="margin:0">Home</a>
@@ -362,19 +362,26 @@
 
         // Code pour la recherche
         const q = document.getElementById('q');
-        q.addEventListener('input', e => {
-            const term = (e.target.value || '').trim().toLowerCase();
-            const cards = document.querySelectorAll('.editorial-card');
-            cards.forEach(card => {
-                const title = card.querySelector('.list-title')?.textContent.toLowerCase() || '';
-                const excerpt = card.querySelector('.excerpt')?.textContent.toLowerCase() || '';
-                if (title.includes(term) || excerpt.includes(term)) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
+        if (q) {
+            q.addEventListener('input', e => {
+                const term = (e.target.value || '').trim().toLowerCase();
+                const cards = document.querySelectorAll('.editorial-card');
+                cards.forEach(card => {
+                    const title = card.querySelector('.list-title')?.textContent.toLowerCase() || '';
+                    const excerpt = card.querySelector('.excerpt')?.textContent.toLowerCase() || '';
+                    const author = card.querySelector('.author')?.textContent.toLowerCase() || '';
+                    const date = card.querySelector('.date')?.textContent.toLowerCase() || '';
+                    
+                    const searchableText = `${title} ${excerpt} ${author} ${date}`;
+                    
+                    if (searchableText.includes(term)) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
             });
-        });
+        }
 
         // ---------------------------------------------
         // Fonctionnalité Thème (persistante, icône stable)

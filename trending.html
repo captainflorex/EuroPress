@@ -225,13 +225,13 @@
 <body>
     <header>
         <div class="container top">
-            <div class="brand">
+            <a href="./index.html" class="brand" style="text-decoration:none; color:inherit;">
                 <div class="logo" aria-hidden="true">EP</div>
                 <div>
                     <div class="title">EuroPress</div>
                     <div class="muted" style="font-size:0.85rem">Culture & Entertainment</div>
                 </div>
-            </div>
+            </a>
 
             <nav aria-label="Main navigation">
                 <a href="./index.html" class="tag" style="margin:0">Home</a>
@@ -493,6 +493,28 @@
             localStorage.setItem(THEME_KEY, light ? 'light' : 'dark');
             applyTheme(light);
         });
+
+        // --- Système de recherche ---
+        const searchInput = document.getElementById('q');
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.trim().toLowerCase();
+                const items = document.querySelectorAll('.trending-item');
+                
+                items.forEach(item => {
+                    const title = item.querySelector('.trending-title')?.textContent.toLowerCase() || '';
+                    const kicker = item.querySelector('.kicker')?.textContent.toLowerCase() || '';
+                    
+                    const searchableText = `${title} ${kicker}`;
+                    
+                    if (searchableText.includes(searchTerm)) {
+                        item.style.display = '';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        }
 
         // Exécution initiale
         document.addEventListener('DOMContentLoaded', () => {

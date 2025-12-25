@@ -192,13 +192,13 @@
 <body>
     <header>
         <div class="container top">
-            <div class="brand">
+            <a href="./index.html" class="brand" style="text-decoration:none; color:inherit;">
                 <div class="logo" aria-hidden="true">EP</div>
                 <div>
                     <div class="title">EuroPress</div>
                     <div class="muted" style="font-size:0.85rem">Culture & Entertainment</div>
                 </div>
-            </div>
+            </a>
 
             <nav aria-label="Main navigation">
                 <a href="./index.html" class="tag active" style="margin:0">Home</a>
@@ -497,6 +497,30 @@
             localStorage.setItem(THEME_KEY, light ? 'light' : 'dark');
             applyTheme(light);
         });
+
+        // --- Système de recherche ---
+        const searchInput = document.getElementById('q');
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.trim().toLowerCase();
+                const cards = document.querySelectorAll('.card');
+                
+                cards.forEach(card => {
+                    const title = card.querySelector('.card-title')?.textContent.toLowerCase() || '';
+                    const excerpt = card.querySelector('.card-excerpt')?.textContent.toLowerCase() || '';
+                    const author = card.querySelector('.muted')?.textContent.toLowerCase() || '';
+                    const topic = card.querySelector('.kicker, .editorial-kicker')?.textContent.toLowerCase() || '';
+                    
+                    const searchableText = `${title} ${excerpt} ${author} ${topic}`;
+                    
+                    if (searchableText.includes(searchTerm)) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        }
     </script>
 </body>
 </html>
