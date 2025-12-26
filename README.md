@@ -257,3 +257,134 @@ December 26, 2025
 ---
 
 **Note:** This project is a blog platform in development with a focus on gaming and entertainment articles.
+
+---
+
+## 🇩🇪 DEUTSCH
+
+# EuroPress - Blog-Plattform
+
+Ein interaktives Blog mit Artikeln zu Unterhaltung, Gaming, Nachrichten und vielem mehr.
+
+## 📋 Beschreibung
+
+EuroPress ist eine moderne Blog-Plattform, die entwickelt wurde, um Artikel zu verschiedenen Themen zu veröffentlichen. Die Website bietet eine benutzerfreundliche Oberfläche mit:
+- Eine Homepage mit ausgewählten Artikeln
+- Detaillierte Artikel zu verschiedenen Themen
+- Ein Kategorisierungssystem nach Themen (Gaming, Tech, etc.)
+- Eine Datenschutzrichtlinienseite
+- Thematische Seiten (Editorial, Trending, Topics)
+
+## 🎯 Funktionen
+
+- **Dynamische Artikel**: Reichhaltige Inhalte mit eingebetteten Bildern
+- **Responsives Design**: Benutzeroberfläche für alle Geräte optimiert
+- **Content Management**: JSON-Datenbank für Artikel
+- **Kategorien**: Organisation nach Themen (Gaming, Lifestyle, etc.)
+- **Benutzeroberfläche**: Intuitive und ergonomische Navigation
+
+## 📁 Projektstruktur
+
+```
+├── index.html           # Startseite
+├── privacy.html         # Datenschutzrichtlinie
+├── editorials.html      # Redaktionelle Artikel
+├── trending.html        # Trending Artikel
+├── topics.html          # Themen/Kategorien
+├── test.html            # Testseite
+├── README.md            # Dokumentation (Französisch/Englisch/Deutsch)
+├── images/              # Ordner für Bilder
+│   ├── Image2.png       # Pokemon Legends ZA Logo
+│   ├── Image3.png       # Luminose City Grafik
+│   ├── te.png           # Chikorita Bild
+│   ├── totodile.png     # Totodile Bild
+│   ├── AA1GOa7.png      # Tepig Bild
+│   ├── télécharger.png  # Standardbild
+│   ├── te.xcf           # XCF Quelldatei
+│   └── tepig.xcf        # XCF Quelldatei
+└── dummy                # Ressourcenordner
+```
+
+## 📄 Hauptartikel
+
+### Pokemon Legends ZA Review
+Eine umfassende Rezension des Spiels Pokemon Legends ZA™ mit:
+- Spielkontext und Geschichte
+- Analyse der Gameplay-Innovationen
+- Diskussion über Starter-Pokémon
+- Grafik- und Leistungskritik
+- Gesamtbewertung
+
+**Vorhanden auf:** index.html, privacy.html, editorials.html, trending.html, topics.html
+
+## 🖼️ Bilder
+
+Das Projekt enthält mehrere Bilder, die in Artikel eingebettet sind:
+- **Image2.png**: Offizielles Pokemon Legends ZA Logo
+- **Image3.png**: Offizielle Luminose City Grafik
+- **te.png**: Chikorita Illustration
+- **totodile.png**: Totodile Illustration
+- **AA1GOa7.png**: Tepig Illustration
+- **télécharger.png**: Standard-Thumbnail-Bild
+
+## 🎨 Stil und Layout
+
+- Hauptbilder: 30% maximale Breite mit automatischer Höhe
+- Starter-Pokémon-Bilder: 25% Breite, in einer Reihe angeordnet
+- Zentrierter Inhalt für bessere Lesbarkeit
+- Responsives Design für alle Bildschirme
+
+## 🔧 Verwendete Technologien
+
+- HTML5
+- CSS3
+- JavaScript (dynamische Content-Verwaltung)
+- JSON (Artikeldatenbank)
+
+## 📝 Seiteninhalt
+
+### index.html
+Startseite mit vollständiger Liste aller Artikel
+
+### privacy.html
+Datenschutzrichtlinie und Nutzungsbedingungen
+
+### editorials.html
+Redaktionelle Artikel und Analysen
+
+### trending.html
+Trending und beliebte Artikel
+
+### topics.html
+Artikelorganisation nach Kategorien/Themen
+
+### test.html
+Entwicklungs-Testseite
+
+## ✅ Abgeschlossene Funktionen
+
+- ✅ Grundlegende HTML-Struktur
+- ✅ Artikel mit eingebetteten Bildern
+- ✅ Responsives Layout
+- ✅ Artikelsynchronisierung über mehrere Seiten
+- ✅ Optimierte und zentrierte Bilder
+- ✅ Kategorisierungssystem
+
+## 🚀 So verwenden Sie es
+
+1. HTML-Dateien in einem Webbrowser öffnen
+2. Zwischen Seiten über Links navigieren
+3. Vollständige Artikel lesen
+4. Datenschutzrichtlinie aufrufen
+
+## 📧 Autoren
+
+- **Alexandre DESCHAMPS** - Hauptautor der Artikel
+
+## 📅 Letzte Aktualisierung
+
+26. Dezember 2025
+
+---
+
+**Hinweis:** Dieses Projekt ist eine Blog-Plattform in der Entwicklung mit Fokus auf Gaming- und Unterhaltungsartikel.
