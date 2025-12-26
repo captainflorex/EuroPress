@@ -117,11 +117,7 @@ Page de test pour le développement
 3. Consulter les articles complets
 4. Accéder aux politiques de confidentialité
 
-## 📧 Auteurs
-
-- **Alexandre DESCHAMPS** - Auteur principal des articles
-
-## 📅 Dernière mise à jour
+##  Dernière mise à jour
 
 26 décembre 2025
 
@@ -242,11 +238,7 @@ Development test page
 3. Read full articles
 4. Access privacy policy
 
-## 📧 Authors
-
-- **Alexandre DESCHAMPS** - Primary article author
-
-## 📅 Last Updated
+##  Last Updated
 
 December 26, 2025
 
@@ -371,11 +363,7 @@ Entwicklungs-Testseite
 3. Vollständige Artikel lesen
 4. Datenschutzrichtlinie aufrufen
 
-## 📧 Autoren
-
-- **Alexandre DESCHAMPS** - Hauptautor der Artikel
-
-## 📅 Letzte Aktualisierung
+##  Letzte Aktualisierung
 
 26. Dezember 2025
 
@@ -500,11 +488,7 @@ Página de prueba de desarrollo
 3. Lea artículos completos
 4. Acceda a la política de privacidad
 
-## 📧 Autores
-
-- **Alexandre DESCHAMPS** - Autor principal de artículos
-
-## 📅 Última actualización
+##  Última actualización
 
 26 de diciembre de 2025
 
@@ -629,11 +613,7 @@ EuroPress — это современная платформа блога, пр�
 3. Читайте полные статьи
 4. Обратитесь к политике конфиденциальности
 
-## 📧 Авторы
-
-- **Alexandre DESCHAMPS** - Главный автор статей
-
-## 📅 Последнее обновление
+##  Последнее обновление
 
 26 декабря 2025 г.
 
