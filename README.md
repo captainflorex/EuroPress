@@ -2,132 +2,7 @@
 
 ---
 
-## 🇫🇷 FRANÇAIS
-
-# EuroPress - Plateforme de Blog
-
-Un blog interactif présentant des articles de divertissement, gaming, actualité et bien plus encore.
-
-## 📋 Description
-
-EuroPress est une plateforme de blog moderne conçue pour partager des articles sur divers sujets. Le site propose une interface conviviale avec :
-- Une page d'accueil avec articles en vedette
-- Des articles détaillés sur différents sujets
-- Un système de catégorisation par sujet (Gaming, Tech, etc.)
-- Une page de politique de confidentialité
-- Des pages thématiques (Editorial, Trending, Topics)
-
-## 🎯 Fonctionnalités
-
-- **Articles dynamiques** : Contenu riche avec images intégrées
-- **Responsive Design** : Interface adaptée à tous les appareils
-- **Gestion de contenu** : Base de données JSON pour les articles
-- **Catégories** : Organisation par sujets (Gaming, Lifestyle, etc.)
-- **Interface utilisateur** : Navigation intuitive et ergonomique
-
-## 📁 Structure du projet
-
-```
-├── index.html           # Page d'accueil
-├── privacy.html         # Politique de confidentialité
-├── editorials.html      # Articles éditoriaux
-├── trending.html        # Articles tendances
-├── topics.html          # Sujets/Catégories
-├── test.html            # Page de test
-├── README.md            # Documentation (Français/Anglais)
-├── images/              # Dossier des images
-│   ├── Image2.png       # Logo Pokemon Legends ZA
-│   ├── Image3.png       # Artwork Luminose City
-│   ├── te.png           # Image Chikorita
-│   ├── totodile.png     # Image Totodile
-│   ├── AA1GOa7.png      # Image Tepig
-│   └── télécharger.png  # Image par défaut
-└── dummy                # Dossier de ressources
-```
-
-## 📄 Articles principaux
-
-### Pokemon Legends ZA Review
-Une critique complète du jeu Pokemon Legends ZA™ avec :
-- Contexte et histoire du jeu
-- Analyse des innovations gameplay
-- Discussion sur les Pokémon de départ
-- Critique graphique et performance
-- Évaluation globale
-
-**Présent sur :** index.html, privacy.html, editorials.html, trending.html, topics.html
-
-## 🖼️ Images
-
-Le projet inclut plusieurs images intégrées dans les articles :
-- **Image2.png** : Logo officiel Pokemon Legends ZA
-- **Image3.png** : Artwork officiel de Luminose City
-- **te.png** : Illustration de Chikorita
-- **totodile.png** : Illustration de Totodile
-- **AA1GOa7.png** : Illustration de Tepig
-- **télécharger.png** : Image thumbnail par défaut
-
-## 🎨 Style et mise en page
-
-- Images principales : 30% de largeur maximale avec hauteur automatique
-- Images des Pokémon starters : 25% de largeur, alignées en ligne
-- Contenu centré pour une meilleure lisibilité
-- Design responsive pour tous les écrans
-
-## 🔧 Technologies utilisées
-
-- HTML5
-- CSS3
-- JavaScript (gestion dynamique du contenu)
-- JSON (base de données des articles)
-
-## 📝 Contenu des pages
-
-### index.html
-Page d'accueil avec liste complète des articles
-
-### privacy.html
-Politique de confidentialité et conditions d'utilisation
-
-### editorials.html
-Articles éditoriaux et analyses
-
-### trending.html
-Articles tendances et populaires
-
-### topics.html
-Organisation des articles par catégories/sujets
-
-### test.html
-Page de test pour le développement
-
-## ✅ Fonctionnalités complétées
-
-- ✅ Structure HTML de base
-- ✅ Articles avec images intégrées
-- ✅ Mise en page responsive
-- ✅ Synchronisation d'articles sur plusieurs pages
-- ✅ Images optimisées et centrées
-- ✅ Système de catégorisation
-
-## 🚀 Comment utiliser
-
-1. Ouvrir les fichiers HTML dans un navigateur
-2. Naviguer entre les pages via les liens
-3. Consulter les articles complets
-4. Accéder aux politiques de confidentialité
-
-## 📧 Auteurs
-
-- **Alexandre DESCHAMPS** - Auteur principal des articles
-
-## 📅 Dernière mise à jour
-
-26 décembre 2025
-
----
-
-## 🇬🇧 ENGLISH
+## 🇧 ENGLISH
 
 # EuroPress - Blog Platform
 
@@ -256,7 +131,130 @@ December 26, 2025
 
 ---
 
-## 🇩🇪 DEUTSCH
+## �🇷 FRANÇAIS
+
+# EuroPress - Plateforme de Blog
+
+Un blog interactif présentant des articles de divertissement, gaming, actualité et bien plus encore.
+
+## 📋 Description
+
+EuroPress est une plateforme de blog moderne conçue pour partager des articles sur divers sujets. Le site propose une interface conviviale avec :
+- Une page d'accueil avec articles en vedette
+- Des articles détaillés sur différents sujets
+- Un système de catégorisation par sujet (Gaming, Tech, etc.)
+- Une page de politique de confidentialité
+- Des pages thématiques (Editorial, Trending, Topics)
+
+## 🎯 Fonctionnalités
+
+- **Articles dynamiques** : Contenu riche avec images intégrées
+- **Responsive Design** : Interface adaptée à tous les appareils
+- **Gestion de contenu** : Base de données JSON pour les articles
+- **Catégories** : Organisation par sujets (Gaming, Lifestyle, etc.)
+- **Interface utilisateur** : Navigation intuitive et ergonomique
+
+## 📁 Structure du projet
+
+```
+├── index.html           # Page d'accueil
+├── privacy.html         # Politique de confidentialité
+├── editorials.html      # Articles éditoriaux
+├── trending.html        # Articles tendances
+├── topics.html          # Sujets/Catégories
+├── test.html            # Page de test
+├── README.md            # Documentation (Français/Anglais)
+├── images/              # Dossier des images
+│   ├── Image2.png       # Logo Pokemon Legends ZA
+│   ├── Image3.png       # Artwork Luminose City
+│   ├── te.png           # Image Chikorita
+│   ├── totodile.png     # Image Totodile
+│   ├── AA1GOa7.png      # Image Tepig
+│   └── télécharger.png  # Image par défaut
+└── dummy                # Dossier de ressources
+```
+
+## 📄 Articles principaux
+
+### Pokemon Legends ZA Review
+Une critique complète du jeu Pokemon Legends ZA™ avec :
+- Contexte et histoire du jeu
+- Analyse des innovations gameplay
+- Discussion sur les Pokémon de départ
+- Critique graphique et performance
+- Évaluation globale
+
+**Présent sur :** index.html, privacy.html, editorials.html, trending.html, topics.html
+
+## 🖼️ Images
+
+Le projet inclut plusieurs images intégrées dans les articles :
+- **Image2.png** : Logo officiel Pokemon Legends ZA
+- **Image3.png** : Artwork officiel de Luminose City
+- **te.png** : Illustration de Chikorita
+- **totodile.png** : Illustration de Totodile
+- **AA1GOa7.png** : Illustration de Tepig
+- **télécharger.png** : Image thumbnail par défaut
+
+## 🎨 Style et mise en page
+
+- Images principales : 30% de largeur maximale avec hauteur automatique
+- Images des Pokémon starters : 25% de largeur, alignées en ligne
+- Contenu centré pour une meilleure lisibilité
+- Design responsive pour tous les écrans
+
+## 🔧 Technologies utilisées
+
+- HTML5
+- CSS3
+- JavaScript (gestion dynamique du contenu)
+- JSON (base de données des articles)
+
+## 📝 Contenu des pages
+
+### index.html
+Page d'accueil avec liste complète des articles
+
+### privacy.html
+Politique de confidentialité et conditions d'utilisation
+
+### editorials.html
+Articles éditoriaux et analyses
+
+### trending.html
+Articles tendances et populaires
+
+### topics.html
+Organisation des articles par catégories/sujets
+
+### test.html
+Page de test pour le développement
+
+## ✅ Fonctionnalités complétées
+
+- ✅ Structure HTML de base
+- ✅ Articles avec images intégrées
+- ✅ Mise en page responsive
+- ✅ Synchronisation d'articles sur plusieurs pages
+- ✅ Images optimisées et centrées
+- ✅ Système de catégorisation
+
+## 🚀 Comment utiliser
+
+1. Ouvrir les fichiers HTML dans un navigateur
+2. Naviguer entre les pages via les liens
+3. Consulter les articles complets
+4. Accéder aux politiques de confidentialité
+
+## 📧 Auteurs
+
+- **Alexandre DESCHAMPS** - Auteur principal des articles
+
+## 📅 Dernière mise à jour
+
+26 décembre 2025
+
+---
 
 # EuroPress - Blog-Plattform
 
@@ -380,137 +378,6 @@ Entwicklungs-Testseite
 26. Dezember 2025
 
 ---
-
-**Hinweis:** Dieses Projekt ist eine Blog-Plattform in der Entwicklung mit Fokus auf Gaming- und Unterhaltungsartikel.
-
----
-
-## 🇷🇺 РУССКИЙ
-
-# EuroPress - Платформа блога
-
-Интерактивный блог с статьями об развлечениях, играх, новостях и многом другом.
-
-## 📋 Описание
-
-EuroPress — это современная платформа блога, предназначенная для публикации статей на различные темы. Сайт предлагает удобный интерфейс с:
-- Главной страницей с избранными статьями
-- Подробными статьями по различным темам
-- Системой категоризации по темам (Gaming, Tech и т.д.)
-- Страницей политики конфиденциальности
-- Тематическими страницами (Editorial, Trending, Topics)
-
-## 🎯 Возможности
-
-- **Динамические статьи**: Богатое содержание с встроенными изображениями
-- **Адаптивный дизайн**: Интерфейс оптимизирован для всех устройств
-- **Управление контентом**: База данных JSON для статей
-- **Категории**: Организация по темам (Gaming, Lifestyle и т.д.)
-- **Пользовательский интерфейс**: Интуитивная и эргономичная навигация
-
-## 📁 Структура проекта
-
-```
-├── index.html           # Главная страница
-├── privacy.html         # Политика конфиденциальности
-├── editorials.html      # Редакционные статьи
-├── trending.html        # Трендовые статьи
-├── topics.html          # Темы/Категории
-├── test.html            # Тестовая страница
-├── README.md            # Документация (Французский/Английский/Немецкий/Русский)
-├── images/              # Папка с изображениями
-│   ├── Image2.png       # Логотип Pokemon Legends ZA
-│   ├── Image3.png       # Графика Luminose City
-│   ├── te.png           # Изображение Chikorita
-│   ├── totodile.png     # Изображение Totodile
-│   ├── AA1GOa7.png      # Изображение Tepig
-│   └── télécharger.png  # Стандартное изображение
-└── dummy                # Папка ресурсов
-```
-
-## 📄 Основные статьи
-
-### Pokemon Legends ZA Review
-Полный обзор игры Pokemon Legends ZA™ с:
-- Контекст и сюжет игры
-- Анализ инноваций геймплея
-- Обсуждение стартовых Покемонов
-- Критика графики и производительности
-- Общая оценка
-
-**Присутствует на:** index.html, privacy.html, editorials.html, trending.html, topics.html
-
-## 🖼️ Изображения
-
-Проект включает несколько изображений, встроенных в статьи:
-- **Image2.png**: Официальный логотип Pokemon Legends ZA
-- **Image3.png**: Официальная графика Luminose City
-- **te.png**: Иллюстрация Chikorita
-- **totodile.png**: Иллюстрация Totodile
-- **AA1GOa7.png**: Иллюстрация Tepig
-- **télécharger.png**: Изображение миниатюры по умолчанию
-
-## 🎨 Стиль и макет
-
-- Основные изображения: 30% максимальной ширины с автоматической высотой
-- Изображения стартовых Покемонов: 25% ширины, расположены в одну строку
-- Центрированное содержимое для лучшей читаемости
-- Адаптивный дизайн для всех экранов
-
-## 🔧 Используемые технологии
-
-- HTML5
-- CSS3
-- JavaScript (управление динамическим контентом)
-- JSON (база данных статей)
-
-## 📝 Содержимое страниц
-
-### index.html
-Главная страница с полным списком всех статей
-
-### privacy.html
-Политика конфиденциальности и условия использования
-
-### editorials.html
-Редакционные статьи и анализ
-
-### trending.html
-Трендовые и популярные статьи
-
-### topics.html
-Организация статей по категориям/темам
-
-### test.html
-Тестовая страница разработки
-
-## ✅ Завершенные функции
-
-- ✅ Основная HTML-структура
-- ✅ Статьи со встроенными изображениями
-- ✅ Адаптивный макет
-- ✅ Синхронизация статей на нескольких страницах
-- ✅ Оптимизированные и центрированные изображения
-- ✅ Система категоризации
-
-## 🚀 Как использовать
-
-1. Откройте HTML-файлы в веб-браузере
-2. Переходите между страницами, используя ссылки
-3. Читайте полные статьи
-4. Обратитесь к политике конфиденциальности
-
-## 📧 Авторы
-
-- **Alexandre DESCHAMPS** - Главный автор статей
-
-## 📅 Последнее обновление
-
-26 декабря 2025 г.
-
----
-
-**Примечание:** Этот проект — это платформа блога в разработке с ориентацией на статьи об играх и развлечениях.
 
 ---
 
@@ -640,3 +507,132 @@ Página de prueba de desarrollo
 ---
 
 **Nota:** Este proyecto es una plataforma de blog en desarrollo con enfoque en artículos de gaming y entretenimiento.
+
+---
+
+## 🇷🇺 РУССКИЙ
+
+# EuroPress - Платформа блога
+
+Интерактивный блог с статьями об развлечениях, играх, новостях и многом другом.
+
+## 📋 Описание
+
+EuroPress — это современная платформа блога, предназначенная для публикации статей на различные темы. Сайт предлагает удобный интерфейс с:
+- Главной страницей с избранными статьями
+- Подробными статьями по различным темам
+- Системой категоризации по темам (Gaming, Tech и т.д.)
+- Страницей политики конфиденциальности
+- Тематическими страницами (Editorial, Trending, Topics)
+
+## 🎯 Возможности
+
+- **Динамические статьи**: Богатое содержание с встроенными изображениями
+- **Адаптивный дизайн**: Интерфейс оптимизирован для всех устройств
+- **Управление контентом**: База данных JSON для статей
+- **Категории**: Организация по темам (Gaming, Lifestyle и т.д.)
+- **Пользовательский интерфейс**: Интуитивная и эргономичная навигация
+
+## 📁 Структура проекта
+
+```
+├── index.html           # Главная страница
+├── privacy.html         # Политика конфиденциальности
+├── editorials.html      # Редакционные статьи
+├── trending.html        # Трендовые статьи
+├── topics.html          # Темы/Категории
+├── test.html            # Тестовая страница
+├── README.md            # Документация (Английский/Французский/Немецкий/Испанский/Русский)
+├── images/              # Папка с изображениями
+│   ├── Image2.png       # Логотип Pokemon Legends ZA
+│   ├── Image3.png       # Графика Luminose City
+│   ├── te.png           # Изображение Chikorita
+│   ├── totodile.png     # Изображение Totodile
+│   ├── AA1GOa7.png      # Изображение Tepig
+│   └── télécharger.png  # Стандартное изображение
+└── dummy                # Папка ресурсов
+```
+
+## 📄 Основные статьи
+
+### Pokemon Legends ZA Review
+Полный обзор игры Pokemon Legends ZA™ с:
+- Контекст и сюжет игры
+- Анализ инноваций геймплея
+- Обсуждение стартовых Покемонов
+- Критика графики и производительности
+- Общая оценка
+
+**Присутствует на:** index.html, privacy.html, editorials.html, trending.html, topics.html
+
+## 🖼️ Изображения
+
+Проект включает несколько изображений, встроенных в статьи:
+- **Image2.png**: Официальный логотип Pokemon Legends ZA
+- **Image3.png**: Официальная графика Luminose City
+- **te.png**: Иллюстрация Chikorita
+- **totodile.png**: Иллюстрация Totodile
+- **AA1GOa7.png**: Иллюстрация Tepig
+- **télécharger.png**: Изображение миниатюры по умолчанию
+
+## 🎨 Стиль и макет
+
+- Основные изображения: 30% максимальной ширины с автоматической высотой
+- Изображения стартовых Покемонов: 25% ширины, расположены в одну строку
+- Центрированное содержимое для лучшей читаемости
+- Адаптивный дизайн для всех экранов
+
+## 🔧 Используемые технологии
+
+- HTML5
+- CSS3
+- JavaScript (управление динамическим контентом)
+- JSON (база данных статей)
+
+## 📝 Содержимое страниц
+
+### index.html
+Главная страница с полным списком всех статей
+
+### privacy.html
+Политика конфиденциальности и условия использования
+
+### editorials.html
+Редакционные статьи и анализ
+
+### trending.html
+Трендовые и популярные статьи
+
+### topics.html
+Организация статей по категориям/темам
+
+### test.html
+Тестовая страница разработки
+
+## ✅ Завершенные функции
+
+- ✅ Основная HTML-структура
+- ✅ Статьи со встроенными изображениями
+- ✅ Адаптивный макет
+- ✅ Синхронизация статей на нескольких страницах
+- ✅ Оптимизированные и центрированные изображения
+- ✅ Система категоризации
+
+## 🚀 Как использовать
+
+1. Откройте HTML-файлы в веб-браузере
+2. Переходите между страницами, используя ссылки
+3. Читайте полные статьи
+4. Обратитесь к политике конфиденциальности
+
+## 📧 Авторы
+
+- **Alexandre DESCHAMPS** - Главный автор статей
+
+## 📅 Последнее обновление
+
+26 декабря 2025 г.
+
+---
+
+**Примечание:** Этот проект — это платформа блога в разработке с ориентацией на статьи об играх и развлечениях.
