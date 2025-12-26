@@ -519,3 +519,134 @@ EuroPress — это современная платформа блога, пр�
 ---
 
 **Примечание:** Этот проект — это платформа блога в разработке с ориентацией на статьи об играх и развлечениях.
+
+---
+
+## 🇪🇸 ESPAÑOL
+
+# EuroPress - Plataforma de Blog
+
+Un blog interactivo con artículos sobre entretenimiento, gaming, noticias y mucho más.
+
+## 📋 Descripción
+
+EuroPress es una plataforma de blog moderna diseñada para compartir artículos sobre varios temas. El sitio ofrece una interfaz fácil de usar con:
+- Una página de inicio con artículos destacados
+- Artículos detallados sobre diferentes temas
+- Un sistema de categorización por tema (Gaming, Tech, etc.)
+- Una página de política de privacidad
+- Páginas temáticas (Editorial, Trending, Topics)
+
+## 🎯 Características
+
+- **Artículos dinámicos**: Contenido enriquecido con imágenes incrustadas
+- **Diseño responsivo**: Interfaz optimizada para todos los dispositivos
+- **Gestión de contenidos**: Base de datos JSON para artículos
+- **Categorías**: Organización por temas (Gaming, Lifestyle, etc.)
+- **Interfaz de usuario**: Navegación intuitiva y ergonómica
+
+## 📁 Estructura del proyecto
+
+```
+├── index.html           # Página de inicio
+├── privacy.html         # Política de privacidad
+├── editorials.html      # Artículos editoriales
+├── trending.html        # Artículos tendencia
+├── topics.html          # Temas/Categorías
+├── test.html            # Página de prueba
+├── README.md            # Documentación (Francés/Inglés/Alemán/Ruso/Español)
+├── images/              # Carpeta de imágenes
+│   ├── Image2.png       # Logo de Pokemon Legends ZA
+│   ├── Image3.png       # Arte de Luminose City
+│   ├── te.png           # Imagen de Chikorita
+│   ├── totodile.png     # Imagen de Totodile
+│   ├── AA1GOa7.png      # Imagen de Tepig
+│   ├── télécharger.png  # Imagen por defecto
+│   ├── te.xcf           # Archivo fuente XCF
+│   └── tepig.xcf        # Archivo fuente XCF
+└── dummy                # Carpeta de recursos
+```
+
+## 📄 Artículos principales
+
+### Pokemon Legends ZA Review
+Una reseña completa del juego Pokemon Legends ZA™ con:
+- Contexto e historia del juego
+- Análisis de innovaciones de gameplay
+- Discusión sobre Pokémon iniciales
+- Crítica de gráficos y rendimiento
+- Evaluación general
+
+**Presente en:** index.html, privacy.html, editorials.html, trending.html, topics.html
+
+## 🖼️ Imágenes
+
+El proyecto incluye varias imágenes incrustadas en artículos:
+- **Image2.png**: Logo oficial de Pokemon Legends ZA
+- **Image3.png**: Arte oficial de Luminose City
+- **te.png**: Ilustración de Chikorita
+- **totodile.png**: Ilustración de Totodile
+- **AA1GOa7.png**: Ilustración de Tepig
+- **télécharger.png**: Imagen de miniatura por defecto
+
+## 🎨 Estilo y diseño
+
+- Imágenes principales: 30% de ancho máximo con altura automática
+- Imágenes de Pokémon iniciales: 25% de ancho, alineadas en una fila
+- Contenido centrado para mejor legibilidad
+- Diseño responsivo para todas las pantallas
+
+## 🔧 Tecnologías utilizadas
+
+- HTML5
+- CSS3
+- JavaScript (gestión de contenido dinámico)
+- JSON (base de datos de artículos)
+
+## 📝 Contenido de las páginas
+
+### index.html
+Página de inicio con lista completa de todos los artículos
+
+### privacy.html
+Política de privacidad y términos de uso
+
+### editorials.html
+Artículos editoriales y análisis
+
+### trending.html
+Artículos populares y de tendencia
+
+### topics.html
+Organización de artículos por categorías/temas
+
+### test.html
+Página de prueba de desarrollo
+
+## ✅ Características completadas
+
+- ✅ Estructura HTML básica
+- ✅ Artículos con imágenes incrustadas
+- ✅ Diseño responsivo
+- ✅ Sincronización de artículos en múltiples páginas
+- ✅ Imágenes optimizadas y centradas
+- ✅ Sistema de categorización
+
+## 🚀 Cómo usar
+
+1. Abra los archivos HTML en un navegador web
+2. Navegue entre páginas usando los enlaces
+3. Lea artículos completos
+4. Acceda a la política de privacidad
+
+## 📧 Autores
+
+- **Alexandre DESCHAMPS** - Autor principal de artículos
+
+## 📅 Última actualización
+
+26 de diciembre de 2025
+
+---
+
+**Nota:** Este proyecto es una plataforma de blog en desarrollo con enfoque en artículos de gaming y entretenimiento.
