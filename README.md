@@ -41,9 +41,7 @@ EuroPress est une plateforme de blog moderne conçue pour partager des articles 
 │   ├── te.png           # Image Chikorita
 │   ├── totodile.png     # Image Totodile
 │   ├── AA1GOa7.png      # Image Tepig
-│   ├── télécharger.png  # Image par défaut
-│   ├── te.xcf           # Fichier source XCF
-│   └── tepig.xcf        # Fichier source XCF
+│   └── télécharger.png  # Image par défaut
 └── dummy                # Dossier de ressources
 ```
 
@@ -168,9 +166,7 @@ EuroPress is a modern blog platform designed to share articles on various topics
 │   ├── te.png           # Chikorita Image
 │   ├── totodile.png     # Totodile Image
 │   ├── AA1GOa7.png      # Tepig Image
-│   ├── télécharger.png  # Default Image
-│   ├── te.xcf           # XCF Source File
-│   └── tepig.xcf        # XCF Source File
+│   └── télécharger.png  # Default Image
 └── dummy                # Resources Folder
 ```
 
@@ -299,9 +295,7 @@ EuroPress ist eine moderne Blog-Plattform, die entwickelt wurde, um Artikel zu v
 │   ├── te.png           # Chikorita Bild
 │   ├── totodile.png     # Totodile Bild
 │   ├── AA1GOa7.png      # Tepig Bild
-│   ├── télécharger.png  # Standardbild
-│   ├── te.xcf           # XCF Quelldatei
-│   └── tepig.xcf        # XCF Quelldatei
+│   └── télécharger.png  # Standardbild
 └── dummy                # Ressourcenordner
 ```
 
@@ -430,9 +424,7 @@ EuroPress — это современная платформа блога, пр�
 │   ├── te.png           # Изображение Chikorita
 │   ├── totodile.png     # Изображение Totodile
 │   ├── AA1GOa7.png      # Изображение Tepig
-│   ├── télécharger.png  # Стандартное изображение
-│   ├── te.xcf           # Исходный файл XCF
-│   └── tepig.xcf        # Исходный файл XCF
+│   └── télécharger.png  # Стандартное изображение
 └── dummy                # Папка ресурсов
 ```
 
@@ -561,9 +553,7 @@ EuroPress es una plataforma de blog moderna diseñada para compartir artículos 
 │   ├── te.png           # Imagen de Chikorita
 │   ├── totodile.png     # Imagen de Totodile
 │   ├── AA1GOa7.png      # Imagen de Tepig
-│   ├── télécharger.png  # Imagen por defecto
-│   ├── te.xcf           # Archivo fuente XCF
-│   └── tepig.xcf        # Archivo fuente XCF
+│   └── télécharger.png  # Imagen por defecto
 └── dummy                # Carpeta de recursos
 ```
 
