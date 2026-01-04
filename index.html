@@ -469,17 +469,39 @@
             });
         })();
 
-        // Reset persistent click counts once after data cleanup
-        (() => {
-            const KEY = 'ep_click_counts';
-            const RESET_FLAG = 'ep_click_counts_reset_v1';
-            if (!localStorage.getItem(RESET_FLAG)) {
-                localStorage.removeItem(KEY);
-                localStorage.setItem(RESET_FLAG, '1');
-            }
-        })();
+        // GESTION DU CLIC ET LOCAL STORAGE (POUR TRENDING)
+        const CLICK_KEY = 'ep_click_counts';
+        let clickCounts = JSON.parse(localStorage.getItem(CLICK_KEY) || '{}');
+        
+        // Si le localStorage est vide, initialiser avec des vues arbitraires
+        if (Object.keys(clickCounts).length === 0) {
+            clickCounts = {
+                1: 245,  // Star Wars article
+                2: 189,  // Red Dead Redemption
+                3: 312,  // Netflix Warner Bros
+                4: 156,  // Pokemon Legends
+                5: 198,  // LEC 2026
+                6: 167,  // War Thunder Update
+                7: 223,  // War Thunder Editorial
+                8: 134,  // Musical Drift
+                9: 201,  // La La Land
+                10: 178, // Bodybuilding Climbing
+                11: 145, // IFBB Health
+                12: 267  // League of Legends
+            };
+            localStorage.setItem(CLICK_KEY, JSON.stringify(clickCounts));
+        }
 
-        // DONNÉES UNIFIÉES
+        function saveCounts() {
+            localStorage.setItem(CLICK_KEY, JSON.stringify(clickCounts));
+        }
+
+        function incrementCount(id){
+            clickCounts[id] = (clickCounts[id] || 0) + 1;
+            saveCounts();
+        }
+
+        // RENDU DES ARTICLES FILTRÉS
         const articlesData = [
             { id: 1, title: "Rian Johnson's Star Wars Trilogy: A Broken Promise That Still Leaves a Bitter Taste", author: "Eliot GROSEIL", date: "Nov 24, 2025", topic: "Editorial", contentType: "editorial", img: "./images/GettyImages-2217355437.png", excerpt: "Johnson's planned Star Wars trilogy is effectively dead, leaving a bitter aftertaste after years of silence.", body: "<p>It is now official: Rian Johnson's Star Wars trilogy is effectively dead. The news is not exactly shocking after years of silence, but it still hits hard. For those who held onto the promise made in 2017, right after the explosive release of The Last Jedi, this feels like another letdown in a long line of abandoned Star Wars projects.</p><h3>A Missed Opportunity</h3><p>Johnson had everything lined up for success. With The Last Jedi, he dared to shake up the formula. Yes, he split the fanbase, but he also injected creativity into a saga that often played things too safe. A brand-new trilogy, completely removed from the Skywalker storyline, felt like a breath of fresh air waiting to happen: new worlds, new characters, new ideas, a chance to break free from the weight of legacy.</p><p>But reality had other plans. Between the initial announcement and today, Knives Out happened. Then its sequel. Then Netflix. Then a third Benoit Blanc mystery. Johnson himself admits he went into another universe. And honestly, who can blame him? Knives Out is fantastic. Still, the situation leaves a bitter aftertaste. Lucasfilm let a bold, imaginative filmmaker slip away—and for what?</p><h3>What Now?</h3><p>Meanwhile, the Star Wars machine keeps expanding, but the overall strategy is starting to look more like a patchwork than a coherent vision. Simon Kinberg is now taking over with a new trilogy (Episodes X, XI, and XII), while standalone films keep stacking up: The Mandalorian & Grogu (May 2026), Starfighter with Ryan Gosling (May 2027), and James Mangold's Dawn of the Jedi, which seems stuck in development limbo.</p><p>The issue? None of these projects appear to carry the kind of singular, daring perspective Johnson could have brought. Instead, it feels like a race to announce the next big name, the next shiny idea—handing out pieces of the galaxy to whichever director is trending, without any real sense of direction.</p><h3>Hope Remains (Somehow)</h3><p>So yes, it is disappointing. Disappointing that Lucasfilm could not keep Johnson onboard. Disappointing that the backlash to The Last Jedi may have played a role. Disappointing that once again, Star Wars seems to be choosing the safest path instead of the boldest one.</p><p>But hope is stubborn. And in this galaxy, it always finds a way to linger.</p>" },
             { id: 2, title: "Red Dead Redemption 2: Commercial Success and Development Conditions", author: "Louis PAICHEUR", date: "Dec 24, 2025", topic: "Gaming", contentType: "article", img: "./images/Image1.jpg", excerpt: "Released in October 2018, Red Dead Redemption 2 achieved worldwide success. But what were the conditions behind its eight-year development?", body: "<p>Released in October 2018, Red Dead Redemption 2, developed by Rockstar Games, achieved worldwide commercial success. The title is the result of a development cycle that lasted around eight years. This development required significant human and financial resources. It also revived questions about the studio's internal work organization.</p><h3>A Western Set in the Late 19th Century</h3><p>The game takes place in the late 19th century, in a declining American Far West. The player controls Arthur Morgan, an outlaw and member of a criminal gang. The authorities pursue the group after several robberies, and the story follows their escape through a changing America.</p><h3>A Large-Scale Development</h3><p>The development spanned roughly eight years. Its cost, according to several specialized media outlets, is estimated between 370 and 540 million dollars. The production reportedly involved several thousand people, with extensive work on performance and dialogue: around 1,200 actors are said to have recorded nearly 500,000 lines.</p><h3>Work Rhythms Reported by Developers</h3><p>Developers described intense work rhythms during certain phases. Some employees say they worked up to 60 hours per week. Others mention even more demanding periods. A former animator at the studio stated that he exceeded 70 hours per week for several months.</p><h3>Rockstar's Position and Internal Data Reported in the Press</h3><p>Rockstar Games claims an average workweek of 45 hours. Internal surveys, cited by the press, indicate that around 20% of employees reported exceeding this threshold during the final stages. The actors also worked over several years, under confidentiality agreements. Roger Clark, who portrays Arthur Morgan, mentioned the length of the recording sessions and the secrecy surrounding the development.</p><h3>A Record Launch and Sustained Sales</h3><p>At release, the game generated 725 million dollars in revenue during its first weekend. Today, more than 79 million copies have been sold worldwide.</p>" },
@@ -494,21 +516,8 @@
             { id: 11, title: "Athlete Health: International Federation Toughens Health Screenings for Competitions", author: "Killian BOSSARD", date: "Jan 4, 2026", topic: "Sports", contentType: "article", img: "./images/WhatsAppImage2026-01-04at22.45.58.jpeg", excerpt: "LAS VEGAS - The International Federation of Bodybuilding (IFBB) announced a major reform of its professional circuit health protocols this morning. Starting next season, cardiac and renal biomarker testing will be mandatory for all athletes before they can obtain their competition license.", body: "<p><strong>LAS VEGAS</strong> - The International Federation of Bodybuilding (IFBB) announced a major reform of its professional circuit health protocols this morning. Starting next season, cardiac and renal biomarker testing will be mandatory for all athletes before they can obtain their competition license.</p><h3>Safety Pivot for the Sport</h3><p>This decision, described as 'historic' by industry observers, comes after a series of intense debates regarding the safety of high-level athletes. The new regulations state that every competitor must undergo a battery of medical examinations validated by a committee of independent experts. Any result deemed 'at-risk' will lead to an immediate suspension from competition until biological parameters return to normal.</p><h3>Key Points of the Reform:</h3><ul><li><strong>Mandatory Monitoring:</strong> Blood pressure checks and full blood panels at 12 weeks and 1 week prior to every major show.</li><li><strong>Medical Transparency:</strong> The creation of a digital health passport for every professional athlete.</li><li><strong>Increased Sanctions:</strong> Coaches whose athletes present recurring serious health pathologies risk the revocation of their official accreditation.</li></ul><h3>Industry Reactions</h3><p>While some athletes welcome a measure that 'protects lives over trophies,' others are concerned about the logistics and the additional costs involved. 'It's a paradigm shift,' explains Marc Holloway, an analyst for Strength Magazine. 'We are moving from a culture of pure performance to a culture of sustainable performance. Competitive bodybuilding must prove it can self-regulate to remain credible.'</p><p>The president of the medical commission clarified that these measures are not intended to 'punish,' but to prevent the tragic accidents that have affected the sport in recent years. The new directives will take effect on January 1, 2026.</p>" },
             { id: 12, title: "League of Legends: A Game That Redefined Competitive Gaming", author: "Pierre ZANI", date: "Jan 4, 2026", topic: "Editorial", contentType: "editorial", img: "./images/téle.webp", excerpt: "Few video games have had an impact as profound as League of Legends. More than just a popular multiplayer game, it has become a global phenomenon that reshaped the esports industry and the way people perceive competitive gaming.", body: "<p>Few video games have had an impact as profound as League of Legends. More than just a popular multiplayer game, it has become a global phenomenon that reshaped the esports industry and the way people perceive competitive gaming. However, behind its success lies a more complex reality that deserves reflection.</p><p>On the positive side, League of Legends has created one of the most active and passionate communities in the world. Millions of players log in daily, forming teams, developing strategies, and learning the value of cooperation. The game also opened doors to professional careers. Esports athletes, commentators, and content creators now make a living thanks to a game that was once considered simple entertainment. In this sense, League of Legends has helped legitimize video games as a serious cultural and economic force.</p><p>Yet, this success comes with downsides. The game is often criticized for its toxic behavior, with insults and negative attitudes becoming common in online matches. This environment can discourage new players and negatively affect mental health. In addition, the competitive nature of the game can lead to excessive screen time, addiction, and frustration, especially among younger players who struggle to manage emotions and time.</p><p>Despite these issues, the responsibility does not lie solely with the game itself. Players, developers, and the gaming community all play a role in shaping a healthier environment. With better moderation tools, education about online behavior, and responsible gaming habits, League of Legends can continue to evolve positively.</p><p>In the end, League of Legends is neither purely harmful nor entirely beneficial. It reflects our society: competitive, creative, connected, but sometimes excessive. The real challenge is learning how to enjoy it responsibly.</p>" }
         ];
-       
-            // GESTION DU CLIC ET LOCAL STORAGE (POUR TRENDING)
-        const CLICK_KEY = 'ep_click_counts';
-        let clickCounts = JSON.parse(localStorage.getItem(CLICK_KEY) || '{}');
 
-        function saveCounts() {
-            localStorage.setItem(CLICK_KEY, JSON.stringify(clickCounts));
-        }
-
-        function incrementCount(id){
-            clickCounts[id] = (clickCounts[id] || 0) + 1;
-            saveCounts();
-        }
-
-        // RENDU DES ARTICLES FILTRÉS
+        // --- Fonction pour afficher un article en plein écran ---
         const mainArticlesEl = document.getElementById('mainArticles');
 
         function renderArticles(){
