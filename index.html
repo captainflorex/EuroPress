@@ -129,6 +129,108 @@
             background:var(--btn-hover);
         }
 
+        /* Reader poll card */
+        .engage-card {
+            background: var(--card);
+            border: 1px solid rgba(255,255,255,0.04);
+            border-radius: 14px;
+            padding: 20px;
+            margin-top: 28px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+        }
+        .engage-card h2 {
+            margin: 0 0 4px 0;
+            font-size: 1.25rem;
+        }
+        .poll-options {
+            display: grid;
+            gap: 10px;
+            margin: 14px 0;
+        }
+        .poll-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 12px;
+            border: 1px solid var(--btn-border);
+            border-radius: 10px;
+            background: rgba(255,255,255,0.02);
+            cursor: pointer;
+        }
+        .poll-option input {
+            accent-color: var(--accent);
+        }
+        .poll-actions {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .poll-results {
+            margin-top: 12px;
+            display: grid;
+            gap: 10px;
+        }
+        .poll-result-row {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 10px;
+            align-items: center;
+        }
+        .poll-bar {
+            background: rgba(255,255,255,0.06);
+            border-radius: 999px;
+            height: 10px;
+            overflow: hidden;
+        }
+        .poll-bar span {
+            display: block;
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent), #7c3aed);
+            width: 0;
+            transition: width 0.3s ease;
+        }
+        .poll-percent {
+            font-variant-numeric: tabular-nums;
+        }
+        .poll-gif {
+            width:48px;
+            height:48px;
+            border-radius:10px;
+            object-fit:cover;
+            background:var(--glass);
+        }
+        .fun-card {
+            background: var(--card);
+            border: 1px solid rgba(255,255,255,0.04);
+            border-radius: 14px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.14);
+        }
+        .fun-card h3 {
+            margin: 0 0 8px 0;
+            font-size: 1.1rem;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+        .fun-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255,255,255,0.05);
+            padding: 6px 10px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+        }
+        .fun-list {
+            margin: 10px 0 0 0;
+            padding-left: 18px;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
         /* Styles pour article full-screen view */
         .article-detail {
             max-width: 900px;
@@ -225,6 +327,68 @@
                 <section class="article-grid" id="mainArticles">
                     <div style="grid-column: 1 / -1; text-align: center; color: var(--muted); padding: 50px;">Loading articles...</div>
                 </section>
+
+                <section class="engage-card" aria-labelledby="poll-title">
+                    <div style="display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap">
+                        <div>
+                            <h2 id="poll-title">Quick poll</h2>
+                            <p class="muted" style="margin:4px 0 0 0">Tell us what you want more of on EuroPress.</p>
+                        </div>
+                        <span class="kicker" aria-hidden="true">1-click vote</span>
+                        <img class="poll-gif" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXh3cHM0Z3I1dDA5MjV1c3ZhbnZzaDR2aGsyMHB0M2MxcDQzdzB4NCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KVZcNQzDpbl1teu97Y/giphy.gif" alt="Animated decorative icon" aria-hidden="true" loading="lazy" />
+                    </div>
+
+                    <form id="pollForm" class="poll-options">
+                        <label class="poll-option">
+                            <input type="radio" name="poll" value="longreads" />
+                            <span>In-depth reviews</span>
+                        </label>
+                        <label class="poll-option">
+                            <input type="radio" name="poll" value="interviews" />
+                            <span>Interviews with creators</span>
+                        </label>
+                        <label class="poll-option">
+                            <input type="radio" name="poll" value="quicktakes" />
+                            <span>Short takes & recaps</span>
+                        </label>
+                        <label class="poll-option">
+                            <input type="radio" name="poll" value="industry" />
+                            <span>Industry analysis</span>
+                        </label>
+                        <div class="poll-actions">
+                            <button class="read-btn" type="submit">Submit vote</button>
+                            <span id="pollMessage" class="muted" aria-live="polite"></span>
+                        </div>
+                    </form>
+
+                    <div id="pollResults" class="poll-results" aria-live="polite"></div>
+                </section>
+
+                <section class="fun-card" aria-labelledby="fun-title">
+                    <div style="display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap">
+                        <h3 id="fun-title">Did you know? 🤔</h3>
+                        <span class="fun-badge" aria-hidden="true">Top 5 quick hits</span>
+                    </div>
+                    <ol class="fun-list">
+                        <li>The study-sleep connection: your brain strengthens what you learned while you sleep. Studying right before bed helps long-term recall.</li>
+                        <li>The world's oldest school: the University of Al-Quaraouiyine (Morocco) was founded in 859 AD—over 1,100 years old.</li>
+                        <li>Pencil power: one wooden pencil can draw a ~35-mile (56 km) line or write around 45,000 words.</li>
+                    </ol>
+                </section>
+
+                <section class="fun-card" aria-labelledby="community-title">
+                    <div style="display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap">
+                        <h3 id="community-title">School & Community</h3>
+                        <span class="fun-badge" aria-hidden="true">This week</span>
+                    </div>
+                    <div class="fun-list" style="list-style:none; padding-left:0; color:var(--muted);">
+                        <p><strong>Local events:</strong> Film club screening — Friday 6pm, Room B12. Open mic night — Saturday 7pm, Cafeteria.</p>
+                        <p><strong>Sports schedule:</strong> Volleyball vs. Riverton — Wed 5pm (Gym). Soccer at Eastfield — Sat 3pm (Away).</p>
+                        <p><strong>Club spotlight:</strong> Robotics team prototyping a line-following rover; open build session Thursday lunch, Lab 204.</p>
+                        <p><strong>Interview highlight:</strong> Ms. Martin (Literature) on adapting novels for stage; excerpt coming in next issue.</p>
+                        <p><strong>Profile:</strong> Student of the Month — Sara K., for leading the charity drive that hit 150% of the goal.</p>
+                    </div>
+                </section>
             </div>
 
             <!-- Vue article détail (plein écran) -->
@@ -297,7 +461,7 @@
             { id: 5, title: "LEC 2026: A Bold New Chapter for European League of Legends Esports", author: "Pierre ZANI", date: "Jan 04, 2026", topic: "Esports", contentType: "article", img: "./images/AA1Hwhsl.webp", excerpt: "Riot remplace le Winter Split par LEC Versus, un invitational 12 equipes mixant LEC et ERL pour lancer 2026 avec un spot international en jeu.", body: "<p>Riot Games bouleverse le debut de saison: le Winter Split disparait au profit de LEC Versus, un tournoi invitational a 12 equipes qui melange les 10 partenaires LEC et deux invites venues des ligues regionales EMEA.</p><h3>LEC Versus en bref</h3><p>Onze semaines de round-robin en BO1 ou chaque equipe joue toutes les autres, puis un top 8 en double elimination combine BO3 et BO5 pour sacrer le champion.</p><p>Le vainqueur empoche un sésame direct pour First Stand, le premier tournoi international de l'annee, injectant des enjeux forts des la semaine 1.</p><h3>Spring et Summer restent familiers</h3><p>Les splits Spring et Summer conservent 10 equipes, un simple round-robin en BO3 et des playoffs en BO5 pour distribuer les billets du MSI et du Worlds.</p><h3>Pourquoi ce changement</h3><p>Objectifs affiches: hausser les enjeux des l'ouverture, rapprocher LEC et ERL en offrant une vitrine aux challengers (ex. Los Ratones, Karmine Corp Blue) et dynamiser l'audience avec plus d'imprevu.</p><h3>Reactions</h3><p>Les fans saluent l'arrivee de nouvelles rivalites et d'histoires d'outsiders, tandis que certains commentateurs redoutent la cascade de BO1. Quoi qu'il en soit, l'attente autour de cette saison 2026 n'a jamais ete aussi forte.</p>" },
             { id: 6, title: "Gaijin Entertainment Launches Line of Contact Winter Update for War Thunder", author: "Floriant CHAFFRAY", date: "Dec 16, 2025", topic: "Gaming", contentType: "article", img: "./images/1500x500_twi_bg_line_of_contact_mig_25pd_logo_eng_56461baf7aaa21afb57e963647eb4b84.jpg", excerpt: "On December 16, 2025, Gaijin Entertainment dropped the latest major update for War Thunder. The Line of Contact update brings a closed beta for an infantry game mode, advanced combat vehicles, and lots of gameplay changes.", body: "<p>On December 16, 2025, Gaijin Entertainment dropped the latest major update for War Thunder. The Line of Contact update brings a closed beta for an infantry game mode, advanced combat vehicles, and lots of gameplay changes for air, ground, and naval battles.</p><h3>Infantry Combat in Closed Beta</h3><p>For the first time, War Thunder players can fight as infantry soldiers. The closed beta lets players work room to room, have sniper battles, and push through city streets. Beta sign-ups are on the game's website, but Gaijin hasn't said when the mode will fully release.</p><h3>New Vehicles</h3><p>The update adds over 30 new vehicles from different countries and roles.</p><ul><li><strong>Air:</strong> Germany, Britain, and Italy get three Eurofighter Typhoon versions with AESA radar and eight AIM-120 AMRAAM missiles each. The U.S. gets the F/A-18E Super Hornet with twelve active radar missiles, and Sweden adds the JAS39E Gripen with Brimstone. Russia gets the Su-30SM2 with the IRBIS-E radar system. Also, the FR-1 Fireball (with a hybrid propeller-jet engine) and the DB-LK bomber (with twin cockpits and gun turrets) came in.</li><li><strong>Ground:</strong> Britain's Ajax and America's M10 Booker join as fast-moving light vehicles. The Ajax has a 40mm cannon, while the Booker packs a 105mm. Looks like both can do recon. Russia's BMPT Terminator has two 30mm autocannons and anti-tank missiles on each side of its turret.</li><li><strong>Air Defense:</strong> Japan gets the Type 03 Chū-SAM with AESA radar and vertical launch containers. Sweden and the U.S. get the Norwegian/American NASAMS 3 with active radar missiles, and China gets the HQ11 with phased-array radar and eight missiles.</li><li><strong>Sea:</strong> The Soviet battlecruiser Stalingrad, HMS Prince of Wales, and USS South Dakota came in.</li></ul><h3>Visual and Gameplay Update</h3><p>The winter version of the Poland map got a visual makeover. Buildings, plants, and other details are updated, but the layout is the same.</p><p>Naval battles have a Severe Damage system. If a ship loses half its crew, you get half the credit you would for sinking the ship.</p><p>Ground lineups at 9.3 battle rating and above can bring an extra vehicle. Arcade battles get one more slot, while realistic battles add a tank and an anti-aircraft vehicle.</p><p>The hangar got a refresh. Weapons are in front of aircraft and next to ground vehicles, with info about each one. Premium and event vehicles have new animations like opening cockpits, starting engines, spinning propellers, and turning turrets and guns.</p><p>The Line of Contact update is out now on PC and consoles. The full list of changes is on War Thunder's website.</p>" },
             { id: 7, title: "War Thunder's Infantry Gamble: Great Idea or Identity Crisis?", author: "Floriant CHAFFRAY", date: "Jan 04, 2026", topic: "Editorial", contentType: "editorial", img: "./images/maxresdefault.jpg", excerpt: "War Thunder ajoute l'infanterie et des avions AESA: ambition ou perte d'identite?", body: "<p>I'll be real – when I first heard War Thunder was getting infantry combat, I wasn't thrilled. I was confused. After a decade of fine-tuning combined arms warfare with tanks, planes, and ships, Gaijin Entertainment now wants us to trade our joystick for a rifle. I’m not sure they've thought this through.</p><h3>The Infantry Question: Was This Really Needed?</h3><p>War Thunder’s claim to fame was being a vehicle combat game for thinkers. You didn't just fly or drive; you mastered systems, learned about ballistics, and understood armor. The game has always been about machines, not infantry.</p><p>So why add infantry now? Gaijin says it gives a new view of the fight. The thing is, War Thunder already had its own view. A special one. Adding infantry puts it up against Battlefield, Hell Let Loose, and Squad. These games have spent years perfecting infantry combat.</p><p>The closed beta might change my mind. Maybe building raids and city fights will mix well with tanks and air support. Right now, it feels less like something new and more like an identity problem. War Thunder might lose what makes it special by chasing trends instead of building on its strengths.</p><h3>The AESA Arms Race: Too Much, Too Soon?</h3><p>Let's talk about the new toys. Typhoons with AESA radar. F/A-18E Super Hornets with radar missiles. The Su-30SM2 with IRBIS-E systems. Sounds good, right? It pushes War Thunder into tech that will destroy casual players.</p><p>These are big changes. AESA radar changes air combat by making it harder to detect and jam. Radar missiles give a fire-and-forget that casual players won't see coming. The skill needed just went up, and the starting skill needed is super high now.</p><p>The truth is, the higher the tech, the less fun the game is for anyone not ready to study radar like a college class. War Thunder has always been hard to learn. Now it's a wall.</p><h3>The Grind Gets Worse</h3><p>That brings up the grind. Over 30 new vehicles sounds great until you remember they're mostly top-tier. For free players struggling to research Rank VII, this says the end is further away.</p><p>Ground lineups at 9.3 get an extra vehicle slot. That's good if you're already there. What about those in mid-tiers with basic vehicles and high repair costs? This doesn't help them. It helps those already at the top stay there.</p><p>Gaijin added the BMPT Terminator as both a tech tree vehicle and a paid pack. The message is clear: pay to skip the grind, or accept that getting these vehicles will take months or years. The gap between paying and free players just got wider.</p><h3>The Call: Ambition Without a Plan</h3><p>I want to like this update. The visual changes to Poland look good. The hangar animations are a good addition. The Severe Damage mechanic for naval is a good fix. But these small things don't hide the big problem: War Thunder doesn't know what it wants to be.</p><p>A vehicle combat simulator? Then why add infantry?</p><p>An easy-to-play military game? Then why go so hard into hyper-modern combat that depends on radar?</p><p>A fair free-to-play game? Then why make the top-tier grind even longer?</p><p>Should players be excited? If you're already into top-tier content and have the time or money for these new vehicles, then yes. The new jets and SAM systems will be fun. But if you're a casual player, or loved War Thunder's original idea of combined arms vehicle warfare, this update might make you feel left behind.</p><p>Line of Contact isn't a failure. It might be the update where War Thunder forgets what made it special.</p>" },
-            { id: 8, title: "From Art to Product: The Musical Drift", author: "Louis PAICHEUR", date: "Jan 15, 2026", topic: "Editorial", contentType: "editorial", img: "./images/OIP.jpg", excerpt: "Streaming-era incentives are turning songs into products optimized for skips, playlists, and metrics.", body: "<p>Streaming rewired the economics of recorded music. Songs are now engineered to survive skip timers, feed playlists, and trick algorithms into thinking a track is 'sticky'. The shift from album to feed turned music from a singular work into an endless stream of content.</p><h3>Streaming Platforms Reward Quantity</h3><p>Because platforms pay per play, the incentive is volume. Short intros, immediate hooks, and 2-minute runtimes are now standard. Artists front-load choruses to dodge the 30-second skip cliff and push micro-releases to stay visible.</p><h3>Algorithms Replace A&R</h3><p>Editorial teams once curated catalogs; today, recommender systems decide what lives in your queue. Success depends on metadata, release cadence, and willingness to chase playlist slots, not on narrative arcs or creative risk.</p><h3>From Albums to Content Drops</h3><p>Albums become expandable products: deluxe editions, bonus remixes, and cross-genre features meant to refresh the same tracks in the algorithm. Music is packaged for retention metrics, not for cohesive storytelling.</p><h3>What Artists Lose</h3><p>When music is treated like a product SKU, budgets shrink, risks vanish, and mid-tier artists feel pressure to self-produce rapidly. Craft gives way to speed, and audiences learn to consume music as background noise.</p><h3>How to Recenter the Art</h3><p>There is a path back: slow releases, transparent payouts, and spaces that reward listening over scrolling. Direct-to-fan models, ticketed livestreams, and vinyl revivals hint that audiences still crave intention. The industry can follow the metrics—or rebuild value around the art itself.</p>" }
+            { id: 8, title: "From Art to Product: The Musical Drift", author: "Louis PAICHEUR", date: "Jan 15, 2026", topic: "Editorial", contentType: "editorial", img: "./images/télécharger.webp", excerpt: "Streaming-era incentives are turning songs into products optimized for skips, playlists, and metrics.", body: "<p>Streaming rewired the economics of recorded music. Songs are now engineered to survive skip timers, feed playlists, and trick algorithms into thinking a track is 'sticky'. The shift from album to feed turned music from a singular work into an endless stream of content.</p><h3>Streaming Platforms Reward Quantity</h3><p>Because platforms pay per play, the incentive is volume. Short intros, immediate hooks, and 2-minute runtimes are now standard. Artists front-load choruses to dodge the 30-second skip cliff and push micro-releases to stay visible.</p><h3>Algorithms Replace A&R</h3><p>Editorial teams once curated catalogs; today, recommender systems decide what lives in your queue. Success depends on metadata, release cadence, and willingness to chase playlist slots, not on narrative arcs or creative risk.</p><h3>From Albums to Content Drops</h3><p>Albums become expandable products: deluxe editions, bonus remixes, and cross-genre features meant to refresh the same tracks in the algorithm. Music is packaged for retention metrics, not for cohesive storytelling.</p><h3>What Artists Lose</h3><p>When music is treated like a product SKU, budgets shrink, risks vanish, and mid-tier artists feel pressure to self-produce rapidly. Craft gives way to speed, and audiences learn to consume music as background noise.</p><h3>How to Recenter the Art</h3><p>There is a path back: slow releases, transparent payouts, and spaces that reward listening over scrolling. Direct-to-fan models, ticketed livestreams, and vinyl revivals hint that audiences still crave intention. The industry can follow the metrics—or rebuild value around the art itself.</p>" }
         ];
        
             // GESTION DU CLIC ET LOCAL STORAGE (POUR TRENDING)
@@ -423,6 +587,102 @@
             window.scrollTo(0, 0);
         }
 
+        // --- Simple reader poll ---
+        const POLL_VOTE_KEY = 'ep_poll_vote_v1';
+        const POLL_COUNTS_KEY = 'ep_poll_counts_v1';
+        const pollOptions = [
+            { value: 'longreads', label: 'In-depth reviews' },
+            { value: 'interviews', label: 'Interviews with creators' },
+            { value: 'quicktakes', label: 'Short takes & recaps' },
+            { value: 'industry', label: 'Industry analysis' }
+        ];
+
+        function getPollCounts() {
+            const stored = localStorage.getItem(POLL_COUNTS_KEY);
+            let counts = stored ? JSON.parse(stored) : null;
+            if (!counts) {
+                counts = { longreads: 12, interviews: 9, quicktakes: 7, industry: 10 };
+            }
+            // Ensure all options exist
+            pollOptions.forEach(opt => {
+                if (typeof counts[opt.value] !== 'number') counts[opt.value] = 0;
+            });
+            return counts;
+        }
+
+        function savePollCounts(counts) {
+            localStorage.setItem(POLL_COUNTS_KEY, JSON.stringify(counts));
+        }
+
+        function renderPollResults(counts, votedValue) {
+            const container = document.getElementById('pollResults');
+            if (!container) return;
+            const actualTotal = pollOptions.reduce((sum, opt) => sum + (counts[opt.value] || 0), 0);
+            const total = actualTotal || 1;
+
+            container.innerHTML = pollOptions.map(opt => {
+                const count = counts[opt.value] || 0;
+                const percent = Math.round((count / total) * 100);
+                const highlight = votedValue === opt.value ? 'font-weight:700;' : '';
+                return `
+                    <div class="poll-result-row" data-option="${opt.value}">
+                        <div class="poll-label" style="${highlight}">${opt.label}</div>
+                        <div class="poll-bar"><span style="width:${percent}%;"></span></div>
+                        <div class="poll-percent">${percent}%</div>
+                    </div>
+                `;
+            }).join('') + `<div class="muted" style="font-size:0.85rem;">${actualTotal} votes counted.</div>`;
+        }
+
+        function lockPoll(form, selected) {
+            const inputs = form.querySelectorAll('input[name="poll"]');
+            inputs.forEach(input => {
+                input.disabled = true;
+                if (selected && input.value === selected) {
+                    input.checked = true;
+                }
+            });
+            const btn = form.querySelector('button[type="submit"]');
+            if (btn) {
+                btn.disabled = true;
+                btn.textContent = 'Vote recorded';
+            }
+        }
+
+        function initPoll() {
+            const form = document.getElementById('pollForm');
+            if (!form) return;
+            const messageEl = document.getElementById('pollMessage');
+            let counts = getPollCounts();
+            const savedVote = localStorage.getItem(POLL_VOTE_KEY);
+
+            if (savedVote) {
+                lockPoll(form, savedVote);
+                if (messageEl) messageEl.textContent = 'Thanks for voting — results live below.';
+            } else if (messageEl) {
+                messageEl.textContent = 'Choose an option and hit submit.';
+            }
+
+            renderPollResults(counts, savedVote);
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const checked = form.querySelector('input[name="poll"]:checked');
+                if (!checked) {
+                    if (messageEl) messageEl.textContent = 'Please select an option before submitting.';
+                    return;
+                }
+
+                const choice = checked.value;
+                counts[choice] = (counts[choice] || 0) + 1;
+                savePollCounts(counts);
+                localStorage.setItem(POLL_VOTE_KEY, choice);
+                renderPollResults(counts, choice);
+                lockPoll(form, choice);
+                if (messageEl) messageEl.textContent = 'Thanks for your vote!';
+            }, { once: true });
+        }
+
         // --- Vérifier l'URL pour afficher un article à la charge ---
         function checkURLForArticle() {
             const params = new URLSearchParams(window.location.search);
@@ -440,6 +700,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             renderArticles();
             checkURLForArticle();
+            initPoll();
             
             const backBtn = document.querySelector('.back-to-articles');
             if (backBtn) {
