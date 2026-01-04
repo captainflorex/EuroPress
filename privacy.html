@@ -193,6 +193,16 @@
             });
         })();
 
+        // Reset persistent click counts once after data cleanup
+        (() => {
+            const KEY = 'ep_click_counts';
+            const RESET_FLAG = 'ep_click_counts_reset_v1';
+            if (!localStorage.getItem(RESET_FLAG)) {
+                localStorage.removeItem(KEY);
+                localStorage.setItem(RESET_FLAG, '1');
+            }
+        })();
+
         // DONNÉES UNIFIÉES
         const articlesData = [
             {
@@ -207,36 +217,6 @@
             },
             {
                 id: 2,
-                title: "Stream Revival: Top Shows This Month",
-                author: "A. Dupont",
-                date: "Nov 20, 2025",
-                topic: "TV",
-                img: "https://via.placeholder.com/600x338?text=Top+Shows",
-                excerpt: "From prestige dramas to breakout comedies, here's what's worth your binge this month.",
-                body: "<p>The full article body...</p>"
-            },
-            {
-                id: 3,
-                title: "Soundwaves: New Album Review",
-                author: "L. Nguyen",
-                date: "Nov 21, 2025",
-                topic: ["Music"],
-                img: "https://via.placeholder.com/600x338?text=New+Album",
-                excerpt: "A genre-blending sophomore album that refines the artist's sound while taking creative risks.",
-                body: "<p>The full article body...</p>"
-            },
-            {
-                id: 4,
-                title: "Level Up: Indie Game Spotlight",
-                author: "R. Silva",
-                date: "Nov 22, 2025",
-                topic: "Gaming",
-                img: "https://via.placeholder.com/600x338?text=Indie+Game",
-                excerpt: "An ambitious indie title blends nostalgic mechanics with modern design — our hands-on impressions.",
-                body: "<p>The full article body...</p>"
-            },
-            {
-                id: 8,
                 title: "Red Dead Redemption 2: Commercial Success and Development Conditions",
                 author: "Louis Paicheur",
                 date: "Dec 24, 2025",
@@ -247,7 +227,7 @@
                 body: "<p>The full article body...</p>"
             },
             {
-                id: 9,
+                id: 3,
                 title: "Netflix in Exclusive Negotiations to Acquire Warner Bros Discovery",
                 author: "Eliot GROSEIL",
                 date: "Dec 24, 2025",
@@ -257,7 +237,7 @@
                 excerpt: "A colossal deal that would reshape the global entertainment landscape. Netflix reportedly offers $28 per share for Warner Bros Discovery.",
                 body: "<p>The full article body...</p>"
             },
-            { id: 10, title: "Pokemon Legends ZA Review: What Do People Think About the Game?", author: "Alexandre DESCHAMPS", date: "Oct 16, 2025", topic: "Gaming", contentType: "article", img: "./images/Image2.png", excerpt: "The latest Game Freak title finally lands, but fans and critics are split on its new direction.", body: "<header><h1>Pokemon legend ZA review : What do people think about the game ?</h1><p><strong>By:</strong> DESCHAMPS Alexandre</p><p><strong>Location:</strong> Paris, France</p></header><main><section><p style=\"text-align:center;\"><img src=\"./images/Image2.png\" alt=\"Pokemon Legends ZA official logo\" style=\"max-width:30%;height:auto;\"></p><p style=\"text-align:center;\"><em>[Source 2: Pokemon Legends ZA™ official logo]</em></p><p>The latest game from Game Freak studio, <strong>Pokemon Legends ZA™</strong>, was released on October 16th, 2025. This game has been long-awaited by fans, and critical opinions are divided. Let's analyze the main feelings of the players.</p></section><section><h2>Context and Story</h2><p>Pokemon Legends ZA™ was announced on February 27th, 2024, in a trailer during a Pokemon Presents event.</p><p>The story takes place five years after the events of Pokemon X and Y. It begins when the protagonist arrives in <strong>Luminose City</strong> and joins the MZ team to win the ZA tournament, a battle event organized by Quasartico Inc., an urban development organization.</p><p style=\"text-align:center;\"><img src=\"./images/Image3.png\" alt=\"Luminose city\" style=\"max-width:30%;height:auto;\"></p><p style=\"text-align:center;\"><em>[Source 10: Luminose city official artwork for Pokemon Legend ZA™]</em></p><p>We will not go further into the main story to avoid any spoilers.</p></section><section><h2>Gameplay Mechanics and Innovations</h2><p>The game caused immediate reactions, particularly with the return of <strong>Mega Evolutions</strong>, a phenomenon that makes Pokemon stronger for a limited time and hasn't been seen since <em>Pokemon Ultra Sun and Ultra Moon</em> 8 years ago.</p><p>Furthermore, the battle mechanics have been completely overhauled, moving from turn-by-turn combat to a <strong>real-time battle system</strong>, representing a major turning point for strategy and competition.</p></section><section><h2>Points of Contention: Starters and Graphics</h2><p>However, many were disappointed by Game Freak's choice of starters. While fans expected Pokemon representing French culture (like Snivy, Oshawott, or Torchic), the chosen ones were <strong>Chikorita, Totodile, and Tepig</strong>, a choice the community did not understand.</p><p style=\"text-align:center;\"><img src=\"./images/te.png\" alt=\"Chikorita\" style=\"max-width:25%;height:auto;display:inline-block;margin:5px;\"> <img src=\"./images/totodile.png\" alt=\"Totodile\" style=\"max-width:25%;height:auto;display:inline-block;margin:5px;\"> <img src=\"./images/AA1GOa7.png\" alt=\"Tepig\" style=\"max-width:25%;height:auto;display:inline-block;margin:5px;\"></p><p style=\"text-align:center;\"><em>[Source 15: Chikorita, Totodile and Tepig, Pokemon Legends ZA ™ starters]</em></p><p>Fans' anger increased during the gameplay release due to technical design choices. Critics pointed out poor graphic optimization, specifically a single file for the entire city that was too heavy and consumed most resources, while details like wall and window textures were neglected.</p></section><section><h2>Reception and Performance</h2><p>On the other hand, some fans praised the improvements in <strong>level design</strong>, with various accessible zones, total open-world freedom, and exploration mechanics for catching wild Pokemon. It is noted that bugs and degraded graphics mainly affected the Switch 1 version, as the game is optimized for <strong>Switch 2</strong>.</p><p>Scores reflect this division:</p><ul><li>4/10 by James Stephanie Sterling (British freelance journalist).</li><li>5/5 by Video Games Chronicle.</li><li>The general score is usually between <strong>8/10 and 9/10</strong>.</li></ul><p>Regarding sales, the game was a success with <strong>5.8 million copies</strong> sold during the first week, including 1.48 million in Japan on the first day.</p></section><section><h2>Conclusion</h2><p>According to R. Lecocq, a long-time player, even if Pokemon Legends ZA™ presents many flaws like bad graphics and optimization, the game represents a complete overhaul of the original formula and a test for future generations.</p></section></main><footer><hr><p><strong>Sources and links used:</strong></p><ul><li>Pokepedia.fr</li><li>Wikipedia - Pokémon Legends: Z-A</li><li>Nintendo.com - Switch 2 Edition</li><li>Official Pokemon YouTube Channel</li><li>Interview with Raphael Lecocq by Alexandre Deschamps</li></ul></footer>" }
+            { id: 4, title: "Pokemon Legends ZA Review: What Do People Think About the Game?", author: "Alexandre DESCHAMPS", date: "Oct 16, 2025", topic: "Gaming", contentType: "article", img: "./images/Image2.png", excerpt: "The latest Game Freak title finally lands, but fans and critics are split on its new direction.", body: "<header><h1>Pokemon legend ZA review : What do people think about the game ?</h1><p><strong>By:</strong> DESCHAMPS Alexandre</p><p><strong>Location:</strong> Paris, France</p></header><main><section><p style=\"text-align:center;\"><img src=\"./images/Image2.png\" alt=\"Pokemon Legends ZA official logo\" style=\"max-width:30%;height:auto;\"></p><p style=\"text-align:center;\"><em>[Source 2: Pokemon Legends ZA™ official logo]</em></p><p>The latest game from Game Freak studio, <strong>Pokemon Legends ZA™</strong>, was released on October 16th, 2025. This game has been long-awaited by fans, and critical opinions are divided. Let's analyze the main feelings of the players.</p></section><section><h2>Context and Story</h2><p>Pokemon Legends ZA™ was announced on February 27th, 2024, in a trailer during a Pokemon Presents event.</p><p>The story takes place five years after the events of Pokemon X and Y. It begins when the protagonist arrives in <strong>Luminose City</strong> and joins the MZ team to win the ZA tournament, a battle event organized by Quasartico Inc., an urban development organization.</p><p style=\"text-align:center;\"><img src=\"./images/Image3.png\" alt=\"Luminose city\" style=\"max-width:30%;height:auto;\"></p><p style=\"text-align:center;\"><em>[Source 10: Luminose city official artwork for Pokemon Legend ZA™]</em></p><p>We will not go further into the main story to avoid any spoilers.</p></section><section><h2>Gameplay Mechanics and Innovations</h2><p>The game caused immediate reactions, particularly with the return of <strong>Mega Evolutions</strong>, a phenomenon that makes Pokemon stronger for a limited time and hasn't been seen since <em>Pokemon Ultra Sun and Ultra Moon</em> 8 years ago.</p><p>Furthermore, the battle mechanics have been completely overhauled, moving from turn-by-turn combat to a <strong>real-time battle system</strong>, representing a major turning point for strategy and competition.</p></section><section><h2>Points of Contention: Starters and Graphics</h2><p>However, many were disappointed by Game Freak's choice of starters. While fans expected Pokemon representing French culture (like Snivy, Oshawott, or Torchic), the chosen ones were <strong>Chikorita, Totodile, and Tepig</strong>, a choice the community did not understand.</p><p style=\"text-align:center;\"><img src=\"./images/te.png\" alt=\"Chikorita\" style=\"max-width:25%;height:auto;display:inline-block;margin:5px;\"> <img src=\"./images/totodile.png\" alt=\"Totodile\" style=\"max-width:25%;height:auto;display:inline-block;margin:5px;\"> <img src=\"./images/AA1GOa7.png\" alt=\"Tepig\" style=\"max-width:25%;height:auto;display:inline-block;margin:5px;\"></p><p style=\"text-align:center;\"><em>[Source 15: Chikorita, Totodile and Tepig, Pokemon Legends ZA ™ starters]</em></p><p>Fans' anger increased during the gameplay release due to technical design choices. Critics pointed out poor graphic optimization, specifically a single file for the entire city that was too heavy and consumed most resources, while details like wall and window textures were neglected.</p></section><section><h2>Reception and Performance</h2><p>On the other hand, some fans praised the improvements in <strong>level design</strong>, with various accessible zones, total open-world freedom, and exploration mechanics for catching wild Pokemon. It is noted that bugs and degraded graphics mainly affected the Switch 1 version, as the game is optimized for <strong>Switch 2</strong>.</p><p>Scores reflect this division:</p><ul><li>4/10 by James Stephanie Sterling (British freelance journalist).</li><li>5/5 by Video Games Chronicle.</li><li>The general score is usually between <strong>8/10 and 9/10</strong>.</li></ul><p>Regarding sales, the game was a success with <strong>5.8 million copies</strong> sold during the first week, including 1.48 million in Japan on the first day.</p></section><section><h2>Conclusion</h2><p>According to R. Lecocq, a long-time player, even if Pokemon Legends ZA™ presents many flaws like bad graphics and optimization, the game represents a complete overhaul of the original formula and a test for future generations.</p></section></main><footer><hr><p><strong>Sources and links used:</strong></p><ul><li>Pokepedia.fr</li><li>Wikipedia - Pokémon Legends: Z-A</li><li>Nintendo.com - Switch 2 Edition</li><li>Official Pokemon YouTube Channel</li><li>Interview with Raphael Lecocq by Alexandre Deschamps</li></ul></footer>" }
         ];
 
         // Simple theme toggle implementation (persistant, icône inchangée)
