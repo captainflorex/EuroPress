@@ -94,7 +94,8 @@
                 <a href="./credits.html" class="tag active" style="margin:0">Credits</a>
                 <a href="./privacy.html" class="tag" style="margin:0">Privacy</a>
                 <div class="search" role="search">
-                    <span aria-hidden="true">🎬</span>
+                    <span aria-hidden="true">🔍</span>
+                    <input type="search" id="q" placeholder="Search credits..." autocomplete="off" />
                     <button id="themeToggle" title="Toggle theme" aria-pressed="false">🌓</button>
                 </div>
             </nav>
@@ -202,6 +203,47 @@
     </main>
 
     <script>
+        // Search functionality
+        const searchInput = document.getElementById('q');
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.trim().toLowerCase();
+                const creditsSections = document.querySelectorAll('.credits-section');
+                
+                if (searchTerm === '') {
+                    creditsSections.forEach(section => {
+                        section.style.display = '';
+                        const items = section.querySelectorAll('.credits-item');
+                        items.forEach(item => item.style.display = '');
+                    });
+                    return;
+                }
+                
+                creditsSections.forEach(section => {
+                    const items = section.querySelectorAll('.credits-item');
+                    let hasVisibleItems = false;
+                    
+                    items.forEach(item => {
+                        const text = item.textContent.toLowerCase();
+                        
+                        if (text.includes(searchTerm)) {
+                            item.style.display = '';
+                            hasVisibleItems = true;
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                    
+                    // Hide section if no items match
+                    if (hasVisibleItems) {
+                        section.style.display = '';
+                    } else {
+                        section.style.display = 'none';
+                    }
+                });
+            });
+        }
+
         // Thème persistant
         const THEME_KEY = 'ep_theme_mode';
         const themeToggle = document.getElementById('themeToggle');
