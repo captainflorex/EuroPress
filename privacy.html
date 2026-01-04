@@ -78,6 +78,8 @@
                 <a href="./topics.html" class="tag" style="margin:0">Topics</a>
                 <a href="./trending.html" class="tag" style="margin:0">Trending</a>
                 <a href="./editorials.html" class="tag" style="margin:0">Editorials</a>
+                <a href="./staff.html" class="tag" style="margin:0">Staff</a>
+                <a href="./credits.html" class="tag" style="margin:0">Credits</a>
                 <a href="./privacy.html" class="tag active" style="margin:0">Privacy</a>
                 <div class="search" role="search">
                     <span aria-hidden="true">🎬</span>
@@ -160,15 +162,15 @@
                 <a href="./topics.html">Topics</a>
                 <a href="./trending.html">Trending</a>
                 <a href="./editorials.html">Editorials</a>
-                <a href="./privacy.html">Privacy</a>
+                <a href=\"./staff.html\">Staff</a>
+                <a href=\"./credits.html\">Credits</a>
+                <a href=\"./privacy.html\">Privacy</a>
             </div>
         </div>
     </footer>
 
     <script>
-        // Fallback et remplacement proactif des placeholders distants
-        (() => {
-            const FALLBACK = './images/OIP.jpg';
+        const FALLBACK = './images/OIP.jpg';
             const normalize = (img) => {
                 if (!img) return;
                 if (img.src && img.src.includes('via.placeholder.com')) {
@@ -191,7 +193,6 @@
             document.addEventListener('DOMContentLoaded', () => {
                 document.querySelectorAll('img').forEach(normalize);
             });
-        })();
 
         // Reset persistent click counts once after data cleanup
         (() => {

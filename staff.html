@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>EuroPress — Meet the Staff</title>
+    <meta name="description" content="Meet the talented team behind EuroPress." />
+    <meta name="theme-color" content="#0f172a" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-REPLACE_WITH_YOUR_ID"></script>
+    <style>
+        :root{
+            --bg: linear-gradient(180deg,#071028 0%, #071225 60%);
+            --card:#0b1220;
+            --muted:#98a0b3;
+            --accent:#ff6b6b;
+            --glass: rgba(255,255,255,0.03);
+            --text: #e6eef8;
+            --modal-bg: #071227;
+            --modal-text: #cfe8ff;
+            --btn-bg: transparent;
+            --btn-border: rgba(255,255,255,0.06);
+            --btn-text: var(--text);
+            --btn-hover: rgba(255,255,255,0.03);
+            --max-width:1100px;
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            color-scheme: dark;
+        }
+        *{box-sizing:border-box}
+        html,body{height:100%; margin:0; background:var(--bg); color:var(--text); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale}
+        a{color:var(--accent); text-decoration:none}
+        header{backdrop-filter:saturate(1.1) blur(6px); background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); border-bottom:1px solid rgba(255,255,255,0.03)}
+        .container{max-width:var(--max-width); margin:0 auto; padding:20px}
+        .top{display:flex; gap:12px; align-items:center; justify-content:space-between}
+        .brand{display:flex; gap:12px; align-items:center}
+        .logo{
+            width:48px;height:48px;border-radius:8px;display:inline-grid;place-items:center;
+            background:linear-gradient(135deg,var(--accent), #7c3aed); box-shadow:0 6px 18px rgba(255,107,107,0.08); font-weight:700;
+        }
+        .title{font-size:1.15rem; font-weight:700; letter-spacing:0.2px}
+        nav{display:flex; gap:14px; align-items:center}
+        .search{display:flex; gap:8px; align-items:center; background:var(--glass); padding:6px; border-radius:10px}
+        .search input{background:transparent;border:0; outline:none;color:inherit; width:220px}
+        main{padding:28px 20px}
+        .tag{display:inline-block; padding:6px 9px; background:rgba(255,255,255,0.02); border-radius:999px; color:var(--muted); font-size:0.85rem; margin:4px}
+        .tag.active{ background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.06) }
+        .muted{color:var(--muted)}
+
+        .staff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 28px;
+        }
+        .staff-card {
+            background: var(--card);
+            border: 1px solid rgba(255,255,255,0.03);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+        }
+        .staff-card:hover {
+            transform: translateY(-4px);
+        }
+        .staff-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), #7c3aed);
+            margin: 0 auto 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: 700;
+        }
+        .staff-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 12px 0 6px;
+        }
+        .staff-role {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .staff-bio {
+            color: var(--muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        footer{margin-top:28px;padding:18px 0;color:var(--muted); border-top:1px solid rgba(255,255,255,0.02)}
+        
+        /* responsive */
+        @media (max-width:700px){
+            .staff-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container top">
+            <a href="./index.html" class="brand" style="text-decoration:none; color:inherit;">
+                <div class="logo" aria-hidden="true">EP</div>
+                <div>
+                    <div class="title">EuroPress</div>
+                    <div class="muted" style="font-size:0.85rem">Culture & Entertainment</div>
+                </div>
+            </a>
+
+            <nav aria-label="Main navigation">
+                <a href="./index.html" class="tag" style="margin:0">Home</a>
+                <a href="./topics.html" class="tag" style="margin:0">Topics</a>
+                <a href="./trending.html" class="tag" style="margin:0">Trending</a>
+                <a href="./editorials.html" class="tag" style="margin:0">Editorials</a>
+                <a href="./staff.html" class="tag active" style="margin:0">Staff</a>
+                <a href="./credits.html" class="tag" style="margin:0">Credits</a>
+                <a href="./privacy.html" class="tag" style="margin:0">Privacy</a>
+                <div class="search" role="search">
+                    <span aria-hidden="true">🎬</span>
+                    <button id="themeToggle" title="Toggle theme" aria-pressed="false">🌓</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1 style="margin-top:0">Meet the Staff 👥</h1>
+            <p class="muted">The talented team behind EuroPress bringing you culture, entertainment, and student perspectives.</p>
+
+            <section class="staff-grid">
+                <div class="staff-card">
+                    <div class="staff-avatar">🎬</div>
+                    <div class="staff-name">Eliot GROSEIL</div>
+                    <div class="staff-role">Editor-in-Chief</div>
+                    <p class="staff-bio">Passionate about cinema criticism and bold storytelling. Guides EuroPress's editorial vision and oversees all major features.</p>
+                </div>
+
+                <div class="staff-card">
+                    <div class="staff-avatar">🎮</div>
+                    <div class="staff-name">Louis PAICHEUR</div>
+                    <div class="staff-role">Gaming & Culture Editor</div>
+                    <p class="staff-bio">Deep expertise in gaming industry trends and cultural impact. Covers development practices, game reviews, and interactive media.</p>
+                </div>
+
+                <div class="staff-card">
+                    <div class="staff-avatar">⚡</div>
+                    <div class="staff-name">Floriant CHAFFRAY</div>
+                    <div class="staff-role">Tech & Gaming Correspondent</div>
+                    <p class="staff-bio">Covers the latest gaming updates, hardware innovations, and esports news. Brings technical insights to entertainment coverage.</p>
+                </div>
+
+                <div class="staff-card">
+                    <div class="staff-avatar">🎵</div>
+                    <div class="staff-name">Raphaël LEE MILERON</div>
+                    <div class="staff-role">Film & Arts Critic</div>
+                    <p class="staff-bio">Explores cinema as art, music industry shifts, and creative expression. Delivers thoughtful, nuanced editorial perspectives.</p>
+                </div>
+
+                <div class="staff-card">
+                    <div class="staff-avatar">🕹️</div>
+                    <div class="staff-name">Alexandre DESCHAMPS</div>
+                    <div class="staff-role">Gaming Reviewer</div>
+                    <p class="staff-bio">Detailed game reviews, gameplay mechanics analysis, and community feedback synthesis. Covers indie to AAA titles.</p>
+                </div>
+
+                <div class="staff-card">
+                    <div class="staff-avatar">🏆</div>
+                    <div class="staff-name">Pierre ZANI</div>
+                    <div class="staff-role">Esports & Competitive Editor</div>
+                    <p class="staff-bio">Covers esports tournaments, competitive leagues, and gaming culture. Passionate about League of Legends and international tournaments.</p>
+                </div>
+            </section>
+        </div>
+
+        <footer class="container">
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap">
+                <div class="muted">© EuroPress 2025 — Culture & Entertainment</div>
+                <div style="display:flex; gap:12px;">
+                    <a href="./index.html">Home</a>
+                    <a href="./topics.html">Topics</a>
+                    <a href="./trending.html">Trending</a>
+                    <a href="./editorials.html">Editorials</a>
+                    <a href="./staff.html">Staff</a>
+                    <a href="./credits.html">Credits</a>
+                    <a href="./privacy.html">Privacy</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        // Thème persistant
+        const THEME_KEY = 'ep_theme_mode';
+        const themeToggle = document.getElementById('themeToggle');
+        const storedTheme = localStorage.getItem(THEME_KEY);
+        let light = storedTheme ? storedTheme === 'light' : false;
+        if (!storedTheme) localStorage.setItem(THEME_KEY, 'dark');
+
+        function applyTheme(on){
+            if(on){
+                document.documentElement.style.setProperty('--bg','linear-gradient(180deg,#f6fbff 0%, #eef6ff 60%)');
+                document.documentElement.style.setProperty('--card','#ffffff');
+                document.documentElement.style.setProperty('--muted','#556677');
+                document.documentElement.style.setProperty('--accent','#ff6b6b');
+                document.documentElement.style.setProperty('--glass','rgba(0,0,0,0.03)');
+                document.documentElement.style.setProperty('--text','#071225');
+                document.documentElement.style.setProperty('--modal-bg','#ffffff');
+                document.documentElement.style.setProperty('--modal-text','#071225');
+                document.documentElement.style.setProperty('--btn-bg','transparent');
+                document.documentElement.style.setProperty('--btn-border','rgba(7,18,37,0.06)');
+                document.documentElement.style.setProperty('--btn-text','#071225');
+                document.documentElement.style.setProperty('--btn-hover','rgba(7,18,37,0.04)');
+                if(themeToggle){
+                    themeToggle.style.backgroundColor = '#ffffff';
+                    themeToggle.style.color = '#071225';
+                    themeToggle.style.border = '1px solid #e5e7eb';
+                    themeToggle.setAttribute('aria-pressed','true');
+                }
+            } else {
+                document.documentElement.style.removeProperty('--bg');
+                document.documentElement.style.removeProperty('--card');
+                document.documentElement.style.removeProperty('--muted');
+                document.documentElement.style.removeProperty('--accent');
+                document.documentElement.style.removeProperty('--glass');
+                document.documentElement.style.removeProperty('--text');
+                document.documentElement.style.removeProperty('--modal-bg');
+                document.documentElement.style.removeProperty('--modal-text');
+                document.documentElement.style.removeProperty('--btn-bg');
+                document.documentElement.style.removeProperty('--btn-border');
+                document.documentElement.style.removeProperty('--btn-text');
+                document.documentElement.style.removeProperty('--btn-hover');
+                if(themeToggle){
+                    themeToggle.style.backgroundColor = '#0b1220';
+                    themeToggle.style.color = '#e6eef8';
+                    themeToggle.style.border = '1px solid rgba(255,255,255,0.2)';
+                    themeToggle.setAttribute('aria-pressed','false');
+                }
+            }
+        }
+
+        applyTheme(light);
+
+        themeToggle.addEventListener('click', ()=>{
+            light = !light;
+            localStorage.setItem(THEME_KEY, light ? 'light' : 'dark');
+            applyTheme(light);
+        });
+    </script>
+</body>
+</html>
