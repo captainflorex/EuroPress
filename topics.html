@@ -245,6 +245,16 @@
                     <div style="grid-column: 1 / -1; text-align: center; color: var(--muted); padding: 50px;">Loading articles...</div>
                 </section>
             </div>
+
+            <!-- Vue plein écran d'un article -->
+            <div id="articleDetailView" style="display: none;">
+                <div class="container" style="padding:0">
+                    <button class="back-btn" onclick="goBackToArticleList()">← Back to Articles</button>
+                    <div class="article-detail" id="articleContent">
+                        <!-- Le contenu de l'article s'affiche ici -->
+                    </div>
+                </div>
+            </div>
         </div>
 
         <footer class="container">
@@ -394,10 +404,42 @@
         function saveCounts() { localStorage.setItem(CLICK_KEY, JSON.stringify(clickCounts)); }
         function incrementCount(id) { clickCounts[id] = (clickCounts[id] || 0) + 1; saveCounts(); }
 
-        // Fonction pour ouvrir un article en plein écran sur index.html
+        // Fonction pour ouvrir un article en plein écran sur topics.html
         function openArticle(articleId) {
             incrementCount(articleId);
-            window.location.href = `./index.html?articleId=${articleId}`;
+            const article = articlesData.find(x => x.id == articleId);
+            if (!article) return;
+
+            const articleContent = document.getElementById('articleContent');
+            if (!articleContent) return;
+
+            let topicDisplay = Array.isArray(article.topic) ? article.topic.join(', ') : article.topic;
+
+            articleContent.innerHTML = `
+                <h1>${article.title}</h1>
+                <div class="article-meta">
+                    <span>${article.author}</span>
+                    <span>•</span>
+                    <span>${article.date}</span>
+                    <span>•</span>
+                    <span class="muted">${topicDisplay}</span>
+                </div>
+                <img src="${article.img}" alt="${article.title}" style="width:100%; height:auto; border-radius:8px; margin-bottom:24px;" onerror="this.onerror=null;this.src='https://via.placeholder.com/900x300?text=Image+unavailable';" />
+                ${article.body}
+            `;
+
+            document.getElementById('articleView').style.display = 'none';
+            document.getElementById('articleDetailView').style.display = 'block';
+            window.scrollTo(0, 0);
+            history.pushState(null, '', `topics.html?articleId=${articleId}`);
+        }
+
+        // Fonction pour revenir à la liste d'articles du topic
+        function goBackToArticleList() {
+            document.getElementById('articleView').style.display = 'block';
+            document.getElementById('articleDetailView').style.display = 'none';
+            history.pushState(null, '', `topics.html`);
+            window.scrollTo(0, 0);
         }
 
         // Rendu de la grille de topics
@@ -569,8 +611,23 @@
             });
         }
 
+        // Vérifier l'URL pour afficher un article à la charge
+        function checkURLForArticle() {
+            const params = new URLSearchParams(window.location.search);
+            const articleId = params.get('articleId');
+            if (articleId) {
+                const idNum = parseInt(articleId, 10);
+                if (!isNaN(idNum)) {
+                    openArticle(idNum);
+                }
+            }
+        }
+
         // Exécution initiale
-        document.addEventListener('DOMContentLoaded', renderTopics);
+        document.addEventListener('DOMContentLoaded', () => {
+            renderTopics();
+            checkURLForArticle();
+        });
     </script>
 </body>
 </html>
