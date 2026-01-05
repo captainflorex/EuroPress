@@ -394,10 +394,10 @@
         function saveCounts() { localStorage.setItem(CLICK_KEY, JSON.stringify(clickCounts)); }
         function incrementCount(id) { clickCounts[id] = (clickCounts[id] || 0) + 1; saveCounts(); }
 
-        // Fonction pour ouvrir un article en plein écran sur articles.html
+        // Fonction pour ouvrir un article en plein écran sur index.html
         function openArticle(articleId) {
             incrementCount(articleId);
-            window.location.href = `./articles.html?articleId=${articleId}`;
+            window.location.href = `./index.html?articleId=${articleId}`;
         }
 
         // Rendu de la grille de topics
