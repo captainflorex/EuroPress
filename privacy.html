@@ -26,7 +26,7 @@
             color-scheme: dark;
         }
         *{box-sizing:border-box}
-        html,body{height:100%; margin:0; background:var(--bg); color:var(--text); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale}
+        html,body{height:100%; margin:0; background:var(--bg); color:var(--text); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; user-select:none}
         a{color:var(--accent); text-decoration:none}
         header{backdrop-filter:saturate(1.1) blur(6px); background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); border-bottom:1px solid rgba(255,255,255,0.03)}
         .container{max-width:var(--max-width); margin:0 auto; padding:20px}
@@ -52,6 +52,9 @@
         .card ul, .card p{margin-bottom:1em; line-height:1.6;}
         .tag{display:inline-block; padding:6px 9px; background:rgba(255,255,255,0.02); border-radius:999px; color:var(--muted); font-size:0.85rem; margin:4px 4px 4px 0;}
         .tag.active{ background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.06) }
+
+        /* Allow text selection inside form controls */
+        input, textarea, button, select { user-select:text; }
 
         footer{margin-top:28px;padding:18px 0;color:var(--muted); border-top:1px solid rgba(255,255,255,0.02)}
         .muted{color:var(--muted)}
