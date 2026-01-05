@@ -51,6 +51,14 @@
             gap: 24px;
             margin-top: 28px;
         }
+        .featured-video iframe {
+            width: 100%;
+            max-width: 720px;
+            height: 405px;
+            min-height: 320px;
+            display: block;
+            margin: 0 auto;
+        }
         .staff-card {
             background: var(--card);
             border: 1px solid rgba(255,255,255,0.03);
@@ -137,11 +145,6 @@
             <h1 style="margin-top:0">Meet the Staff 👥</h1>
             <p class="muted">The talented team behind EuroPress bringing you culture, entertainment, and student perspectives.</p>
 
-            <!-- Section Vidéo Vedette -->
-            <section class="featured-video" style="margin: 32px 0; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.3);">
-                <iframe width="100%" height="600" src="https://www.youtube.com/embed/QqRc1sYgYRU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: block;"></iframe>
-            </section>
-
             <section class="staff-grid">
                 <div class="staff-card">
                     <div class="staff-avatar">🎬</div>
@@ -191,6 +194,11 @@
                     <div class="staff-role">Sports & Health Analyst</div>
                     <p class="staff-bio">Bridges performance sports and wellness. Explores strength training, climbing, and athlete health policy to make complex topics clear and actionable.</p>
                 </div>
+            </section>
+
+            <!-- Section Vidéo Vedette (bas de page) -->
+            <section class="featured-video" style="margin: 32px 0; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.3); display:flex; justify-content:center;">
+                <iframe class="video-frame" width="100%" src="https://www.youtube.com/embed/-zJGa9u2SCc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </section>
         </div>
 
