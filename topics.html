@@ -248,7 +248,7 @@
 
             <!-- Vue plein écran d'un article -->
             <div id="articleDetailView" style="display: none;">
-                <div class="container" style="padding:0">
+                <div class="container" style="padding: 0;">
                     <button class="back-btn" onclick="goBackToArticleList()">← Back to Articles</button>
                     <div class="article-detail" id="articleContent">
                         <!-- Le contenu de l'article s'affiche ici -->
@@ -428,6 +428,7 @@
                 ${article.body}
             `;
 
+            document.getElementById('topicsView').style.display = 'none';
             document.getElementById('articleView').style.display = 'none';
             document.getElementById('articleDetailView').style.display = 'block';
             window.scrollTo(0, 0);
